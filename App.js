@@ -11,7 +11,7 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: "Login",
-  }
+  },
 );
 
 const AppContainer = createAppContainer(RootStack);

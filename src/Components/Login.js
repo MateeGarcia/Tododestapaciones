@@ -5,13 +5,25 @@ class Login extends React.Component {
   render() {
     return (
       <View>
-
+<Text style={styles.tituloTododestapacionesMenu}>
+Tododestapaciones
+</Text>
           <TextInput style={styles.usuarioInput} placeholder="Usuario" />
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" />
+
+          
 
 <TouchableHighlight style={styles.botonLoginCompletado} onPress={() => Alert.alert("Logeado con exito")}>
       <Text>
        Ingresar
+      </Text>
+    </TouchableHighlight>
+
+    <Text style={styles.noTienesCuenta}> ¿No tienes cuenta? </Text>
+
+    <TouchableHighlight style={styles.botonRegistrarse} onPress={() => Alert.alert("Pantalla Register")}>
+      <Text>
+       Registrarse
       </Text>
     </TouchableHighlight>
 
@@ -24,6 +36,14 @@ module.exports = Login;
 
 const styles = StyleSheet.create({
 
+  tituloTododestapacionesMenu: {
+    marginHorizontal:20,
+    fontSize: 35,
+    marginTop: 25,
+  },
+
+
+
 
   contraseñaInput: {
     padding: 5,
@@ -34,7 +54,7 @@ const styles = StyleSheet.create({
   usuarioInput: {
     padding: 5,
     marginBottom: 20,
-    marginTop: 200,
+    marginTop: 100,
     marginHorizontal: 30,
     backgroundColor: "red"
   },
@@ -52,5 +72,18 @@ const styles = StyleSheet.create({
     borderWidth: 1
   },
 
+  botonRegistrarse: {
+    width: 150,
+    height: 30,
+    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 150,
+    marginBottom: 10,
+    marginHorizontal: 110,
+    borderRadius: 4,
+    borderWidth: 1
+  },
+    
   
 });
