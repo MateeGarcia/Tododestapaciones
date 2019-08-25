@@ -2,6 +2,39 @@
 import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert } from "react-native";
 
 class Login extends React.Component {
+
+  constructor(props){
+    super(props);
+    
+    this.state = {
+      loading: false,
+      pokemon: {},
+      url: ""
+    }
+  }
+
+  componentDidMount(){
+    this.getPokemon();
+  }
+
+  getPokemon = () => {
+    this.setState({ loading:true })
+
+    fetch(this.state.url)
+    .then(res => res.json())
+    .then( res => {
+      this.setState({
+        pokemon: res.results,
+        url: res.next,
+        loading: false
+      })
+    })
+  };
+
+
+
+
+
   render() {
     return (
       <View>
