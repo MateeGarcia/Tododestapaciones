@@ -42,7 +42,10 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
 
-
+  noTienesCuenta: {
+    marginHorizontal: 110,
+    marginTop: 50,
+  },
 
 
   contraseñaInput: {
