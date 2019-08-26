@@ -1,35 +1,51 @@
 ﻿import React from "react";
-import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage } from "react-native";
 
 class Login extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    
     this.state = {
-      loading: false,
-      pokemon: {},
-      url: ""
+      emailEscrito: "",
     }
   }
 
-  componentDidMount(){
-    this.getPokemon();
-  }
 
-  getPokemon = () => {
-    this.setState({ loading:true })
 
-    fetch(this.state.url)
-    .then(res => res.json())
-    .then( res => {
-      this.setState({
-        pokemon: res.results,
-        url: res.next,
-        loading: false
+
+  onSubmitInfo = () => {
+    if (this.state.email.length < 5 || this.state.Password.length <= 8) {
+      Alert.alert("Invalid credentials");
+    } else {
+      fetch('http://10.8.17.9:3000/usernamelist', {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          Username: (this.state.email),
+          Password: (this.state.Password)
+        })
       })
-    })
-  };
+        .then((response) => response.json())
+        .then((responseJson) => {
+
+          if (responseJson.msg == " Si ") {
+
+            global.UserID = responseJson.UserID;
+            this.props.navigation.navigate('PaginaPrincipal');
+          }
+          else {
+            Alert.alert("Email y/o contraseña erroneos");
+          }
+        })
+
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }
 
 
 
@@ -43,14 +59,26 @@ Tododestapaciones
 </Text>
           <TextInput style={styles.usuarioInput} placeholder="Usuario" />
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" />
+          
 
           
 
-<TouchableHighlight style={styles.botonLoginCompletado} onPress={() => Alert.alert("Logeado con exito")}>
+<TouchableHighlight style={styles.botonLoginCompletado} 
+onPress={() => onSubmitInfo} 
+onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}
+>
+
       <Text>
        Ingresar
       </Text>
+      Alert.alert(this.state.emailEscrito);
+      
     </TouchableHighlight>
+
+
+
+
+
 
     <Text style={styles.noTienesCuenta}> ¿No tienes cuenta? </Text>
 
@@ -59,6 +87,8 @@ Tododestapaciones
        Registrarse
       </Text>
     </TouchableHighlight>
+
+
 
       </View>
     );
