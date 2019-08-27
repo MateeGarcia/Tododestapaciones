@@ -1,5 +1,6 @@
 ﻿import React from "react";
 import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 class Login extends React.Component {
 
@@ -7,15 +8,17 @@ class Login extends React.Component {
     super(props);
     this.state = {
       emailEscrito: "",
+      contraseñaEscrita: "",
+      botonLogearse: "",
     }
   }
 
 
 
 
-  onSubmitInfo = () => {
-    if (this.state.email.length < 5 || this.state.Password.length <= 8) {
-      Alert.alert("Invalid credentials");
+  botonLogearse = () => {
+    if (this.state.emailEscrito.length < 5 || this.state.contraseñaEscrita.length <= 8) {
+      Alert.alert("Invalid credentials"); 
     } else {
       fetch('http://10.8.17.9:3000/usernamelist', {
         method: 'POST',
@@ -24,8 +27,8 @@ class Login extends React.Component {
           'Content-type': 'application/json',
         },
         body: JSON.stringify({
-          Username: (this.state.email),
-          Password: (this.state.Password)
+          Username: (this.state.emailEscrito),
+          Password: (this.state.contraseñaEscrita),
         })
       })
         .then((response) => response.json())
@@ -37,7 +40,7 @@ class Login extends React.Component {
             this.props.navigation.navigate('PaginaPrincipal');
           }
           else {
-            Alert.alert("Email y/o contraseña erroneos");
+            Alert.alert("Email y/o contraseña incorrecta");
           }
         })
 
@@ -63,17 +66,17 @@ Tododestapaciones
 
           
 
-<TouchableHighlight style={styles.botonLoginCompletado} 
-onPress={() => onSubmitInfo} 
+<TouchableOpacity style={styles.botonLoginCompletado} 
+onPress={() => botonLogearse} 
 onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}
 >
 
       <Text>
        Ingresar
       </Text>
-      Alert.alert(this.state.emailEscrito);
       
-    </TouchableHighlight>
+      
+    </TouchableOpacity>
 
 
 
