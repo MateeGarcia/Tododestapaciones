@@ -121,7 +121,7 @@ onPress={this.botonLogearse}
 
     <Text style={styles.noTienesCuenta}> ¿No tienes cuenta? </Text>
 
-    <TouchableHighlight style={styles.botonRegistrarse} onPress={() => Alert.alert("Pantalla Register")}>
+    <TouchableHighlight style={styles.botonRegistrarse} onPress={() => {this.props.navigation.navigate('Login')}}>
       <Text>
        Registrarse
       </Text>
