@@ -26,8 +26,8 @@ class Login extends React.Component {
           'Content-type': 'application/json',
         },
         body: JSON.stringify({
-          Username: (this.state.emailEscrito),
-          Password: (this.state.contraseñaEscrita),
+          mail: (this.state.emailEscrito),
+          contraseña: (this.state.contraseñaEscrita),
         })
       })
         .then((response) => response.json())
@@ -52,7 +52,7 @@ class Login extends React.Component {
 
 
   botonRegister = () => {
-    fetch ("", {
+    fetch ("/API/User", {
       method: "POST",
       headers: {
         accept: "application/json", "content-type": "application/json",
@@ -63,6 +63,17 @@ class Login extends React.Component {
         mail: (this.state.mail),
         contraseña: (this.state.contraseña),
         celular: (this.state.celular),
+      })
+})
+  }
+
+  botonRegister2 = () => {
+    fetch ("/API/Direccion", {
+      method: "POST",
+      headers: {
+        accept: "application/json", "content-type": "application/json",
+      },
+      body: JSON.stringify({
         telefono: (this.state.telefono),
         calle: (this.state.calle),
         numero_calle: (this.state.numero_calle),
