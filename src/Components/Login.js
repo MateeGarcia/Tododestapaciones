@@ -92,7 +92,7 @@ class Login extends React.Component {
 <Text style={styles.tituloTododestapacionesMenu}>
 Tododestapaciones
 </Text>
-          <TextInput style={styles.usuarioInput} placeholder="Usuario" 
+          <TextInput style={styles.usuarioInput} placeholder="Mail" 
           onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}
            />
 
@@ -121,7 +121,7 @@ onPress={this.botonLogearse}
 
     <Text style={styles.noTienesCuenta}> ¿No tienes cuenta? </Text>
 
-    <TouchableHighlight style={styles.botonRegistrarse} onPress={() => {this.props.navigation.navigate('Login')}}>
+    <TouchableHighlight style={styles.botonRegistrarse} onPress={() => {this.props.navigation.navigate('pantallaRegister')}}>
       <Text>
        Registrarse
       </Text>
