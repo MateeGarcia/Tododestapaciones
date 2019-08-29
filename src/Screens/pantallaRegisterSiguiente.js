@@ -7,14 +7,43 @@ class pantallaRegisterSiguiente extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          nombreEscrito: "",
-
-          apellidoEscrito: "",
-          mailEscrito: "",
-          contraseñaEscrito: "",
+          direccionEscrito: "",
+          mailadmEscrito: "",
+          celularEscrito: "",
         }
       }
 
+
+      botonRegistrarse = () => {
+        fetch ("/API/User", {
+          method: "POST",
+          headers: {
+            accept: "application/json", "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre: (this.state.nombre),
+            apellido: (this.state.apellido),
+            mail: (this.state.mail),
+            contraseña: (this.state.contraseña),
+            celular: (this.state.celular),
+          })
+        })
+      }
+
+      botonRegister2 = () => {
+        fetch ("/API/Direccion", {
+          method: "POST",
+          headers: {
+            accept: "application/json", "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            telefono: (this.state.telefono),
+            calle: (this.state.calle),
+            numero_calle: (this.state.numero_calle),
+            piso: (this.state.piso),
+          })
+    })
+      }
 
 
       render() {
@@ -31,7 +60,7 @@ class pantallaRegisterSiguiente extends React.Component {
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
 
           <TouchableOpacity style={styles.siguiente} 
-          onPress={() => {this.props.navigation.navigate('pantallaRegister')}}> 
+          onPress={this.botonRegistrarse}> 
           <Text> Registrarte </Text>
           </TouchableOpacity>
 
