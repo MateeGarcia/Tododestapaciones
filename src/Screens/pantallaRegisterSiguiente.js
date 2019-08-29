@@ -21,20 +21,19 @@ class pantallaRegisterSiguiente extends React.Component {
         return (
         <View style={styles.viewInputs}>
 
-          <TextInput style={styles.nombreInput} placeholder="Nombre" 
-          onChange={(event) => this.setState({nombreEscrito: event.nativeEvent.text})}/>
+          <TextInput style={styles.direccionInput} placeholder="Dirección" 
+          onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
-          <TextInput style={styles.apellidoInput} placeholder="Apellido" 
-          onChange={(event) => this.setState({apellidoEscrito: event.nativeEvent.text})}/>
+          <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
+          onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
 
-          <TextInput style={styles.mailInput} placeholder="Mail" 
-          onChange={(event) => this.setState({mailEscrito: event.nativeEvent.text})}/>
-
-          <TextInput style={styles.contraseñaInput} placeholder="Contraseña" 
-          onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
+          <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
+          onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
 
           <TouchableOpacity style={styles.siguiente} 
-          onPress={() => {this.props.navigation.navigate('pantallaRegister')}} />
+          onPress={() => {this.props.navigation.navigate('pantallaRegister')}}> 
+          <Text> Registrarte </Text>
+          </TouchableOpacity>
 
         </View>
 

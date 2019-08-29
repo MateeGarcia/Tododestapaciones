@@ -15,7 +15,6 @@ class pantallaRegister extends React.Component {
         }
       }
 
-<TouchableOpacity></TouchableOpacity>
 
       render() {
         return (
@@ -45,7 +44,7 @@ class pantallaRegister extends React.Component {
 
 
 
-}
+        }
 
 module.exports = pantallaRegister;
 
