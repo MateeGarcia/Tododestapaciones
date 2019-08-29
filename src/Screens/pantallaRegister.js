@@ -15,7 +15,7 @@ class pantallaRegister extends React.Component {
         }
       }
 
-
+<TouchableOpacity></TouchableOpacity>
 
       render() {
         return (
@@ -34,7 +34,10 @@ class pantallaRegister extends React.Component {
           onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
 
           <TouchableOpacity style={styles.siguiente} 
-          onPress={() => {this.props.navigation.navigate('pantallaRegister')}} />
+          onPress={() => {this.props.navigation.navigate('pantallaRegisterSiguiente')}}> 
+          <Text> Siguiente </Text>
+          </TouchableOpacity>
+          
 
         </View>
 

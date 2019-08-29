@@ -2,7 +2,7 @@
 import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-class pantallaRegister extends React.Component {
+class pantallaRegisterSiguiente extends React.Component {
 
     constructor(props) {
         super(props);
@@ -44,7 +44,7 @@ class pantallaRegister extends React.Component {
 
 }
 
-module.exports = pantallaRegister;
+module.exports = pantallaRegisterSiguiente;
 
 const styles = StyleSheet.create({
   viewInputs: {
@@ -52,4 +52,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   }
 })
+
+
 

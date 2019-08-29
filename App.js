@@ -4,12 +4,14 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import Login from "./src/Components/Login"
 import PaginaPrincipal from "./src/Screens/PaginaPrincipal"
 import pantallaRegister from "./src/Screens/pantallaRegister"
+import pantallaRegisterSiguiente from "./src/Screens/pantallaRegisterSiguiente"
 
 const RootStack = createStackNavigator(
   {
     Login: Login,
     PaginaPrincipal: PaginaPrincipal,
-    pantallaRegister: pantallaRegister
+    pantallaRegister: pantallaRegister,
+    pantallaRegisterSiguiente: pantallaRegisterSiguiente
   },
   {
     initialRouteName: "Login",
