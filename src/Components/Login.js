@@ -15,12 +15,11 @@ class Login extends React.Component {
 
 
 
-
   botonLogearse = () => {
     if (this.state.emailEscrito.length < 5 || this.state.contraseñaEscrita.length <= 8) {
       Alert.alert("Invalid credentials"); 
     } else {
-      fetch('http://10.8.17.9:3000/usernamelist', {
+      fetch('', {
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -52,6 +51,28 @@ class Login extends React.Component {
 
 
 
+  botonRegister = () => {
+    fetch ("", {
+      method: "POST",
+      headers: {
+        accept: "application/json", "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        nombre: (this.state.nombre),
+        apellido: (this.state.apellido),
+        mail: (this.state.mail),
+        contraseña: (this.state.contraseña),
+        celular: (this.state.celular),
+        telefono: (this.state.telefono),
+        calle: (this.state.calle),
+        numero_calle: (this.state.numero_calle),
+        piso: (this.state.piso),
+      })
+})
+  }
+
+
+
 
 
   render() {
@@ -60,15 +81,19 @@ class Login extends React.Component {
 <Text style={styles.tituloTododestapacionesMenu}>
 Tododestapaciones
 </Text>
-          <TextInput style={styles.usuarioInput} placeholder="Usuario" />
-          <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" />
+          <TextInput style={styles.usuarioInput} placeholder="Usuario" 
+          onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}
+           />
+
+          <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
+          onChange={(event) => this.setState({contraseñaEscrita: event.nativeEvent.text})}
+          />
           
 
           
 
 <TouchableOpacity style={styles.botonLoginCompletado} 
-onPress={() => botonLogearse} 
-onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}
+onPress={this.botonLogearse}
 >
 
       <Text>
