@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createStackNavigator, createAppContainer} from "react-navigation";
 
 import Login from "./src/Components/Login"
 import PaginaPrincipal from "./src/Screens/PaginaPrincipal"
@@ -13,14 +13,23 @@ const RootStack = createStackNavigator(
     pantallaRegister: pantallaRegister,
     pantallaRegisterSiguiente: pantallaRegisterSiguiente
   },
+  
   {
     initialRouteName: "Login",
+    tittle: "Login",
+    headerStyle: {
+      backgroundColor: "#CCCCCC",
+    },
   },
 );
+
 
 const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
+
+  
+
   render () {
     return <AppContainer />;
   }

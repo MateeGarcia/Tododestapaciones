@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 class Login extends React.Component {
@@ -60,7 +60,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.viewTodo}>
 <Text style={styles.tituloTododestapacionesMenu}>
 Tododestapaciones
 </Text>
@@ -75,16 +75,14 @@ Tododestapaciones
 
           
 
-<TouchableOpacity style={styles.botonLoginCompletado} 
+<TouchableHighlight style={styles.botonLoginCompletado} 
+hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
 onPress={this.botonLogearse}
 >
 
-      <Text>
-       Ingresar
-      </Text>
-      
-      
-    </TouchableOpacity>
+    <Image style={styles.imagestyle} 
+    source={require('../img/ingresar.png')} />
+    </TouchableHighlight>
 
 
 
@@ -94,9 +92,10 @@ onPress={this.botonLogearse}
     <Text style={styles.noTienesCuenta}> ¿No tienes cuenta? </Text>
 
     <TouchableHighlight style={styles.botonRegistrarse} onPress={() => {this.props.navigation.navigate('pantallaRegister')}}>
-      <Text>
-       Registrarse
-      </Text>
+      
+    <Image style={styles.imagestyle} 
+    hitSlop={{top: 2, left: 20, bottom: 2, right: 20}}
+    source={require('../img/registrateAhora.png')} />
     </TouchableHighlight>
 
 
@@ -110,6 +109,10 @@ module.exports = Login;
 
 const styles = StyleSheet.create({
 
+  viewTodo: {
+    backgroundColor: "#CCCCCC"
+  },
+
   tituloTododestapacionesMenu: {
     marginHorizontal:20,
     fontSize: 35,
@@ -118,7 +121,7 @@ const styles = StyleSheet.create({
 
   noTienesCuenta: {
     marginHorizontal: 110,
-    marginTop: 50,
+    marginTop: 85,
   },
 
 
@@ -137,29 +140,21 @@ const styles = StyleSheet.create({
   },
 
   botonLoginCompletado: {
-    width: 150,
-    height: 30,
     backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
     marginTop: 10,
     marginBottom: 10,
     marginHorizontal: 110,
-    borderRadius: 4,
-    borderWidth: 1
   },
 
   botonRegistrarse: {
-    width: 150,
-    height: 30,
     backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 150,
+    marginTop: 10,
     marginBottom: 10,
     marginHorizontal: 110,
-    borderRadius: 4,
-    borderWidth: 1
   },
     
   
