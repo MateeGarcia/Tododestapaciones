@@ -117,7 +117,7 @@ module.exports = pantallaRegister;
 
 const styles = StyleSheet.create({
   viewInputs: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#CCCCCC",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: "#000000",
     borderWidth: 0.5,
+    paddingTop: 30,
   },
 
   apellidoInput: {
