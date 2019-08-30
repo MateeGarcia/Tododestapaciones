@@ -4,6 +4,18 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 class pantallaRegister extends React.Component {
 
+  static navigationOptions = {
+
+  
+    title: "Registre su cuenta",
+    
+
+    headerStyle: {
+      backgroundColor: "#CCCCCC",
+    }
+
+  };
+  
     constructor(props) {
         super(props);
         this.state = {
@@ -16,6 +28,7 @@ class pantallaRegister extends React.Component {
           celularEscrito: "",
         }
       }
+      
 
       botonRegistrarse = () => {
         fetch ("/API/User", {

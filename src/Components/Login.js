@@ -4,6 +4,13 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 class Login extends React.Component {
 
+  static navigationOptions = {
+    title: "Acceso a la cuenta",
+    headerStyle: {
+      backgroundColor: "#CCCCCC",
+    }
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -48,14 +55,6 @@ class Login extends React.Component {
         });
     }
   }
-
-
-
- 
-  
-
-
-
 
 
   render() {
@@ -110,7 +109,7 @@ module.exports = Login;
 const styles = StyleSheet.create({
 
   viewTodo: {
-    backgroundColor: "#CCCCCC"
+    backgroundColor: "#CCCCCC",
   },
 
   tituloTododestapacionesMenu: {

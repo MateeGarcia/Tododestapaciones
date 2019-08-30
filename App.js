@@ -13,14 +13,10 @@ const RootStack = createStackNavigator(
     pantallaRegister: pantallaRegister,
     pantallaRegisterSiguiente: pantallaRegisterSiguiente
   },
-  
+
   {
     initialRouteName: "Login",
-    tittle: "Login",
-    headerStyle: {
-      backgroundColor: "#CCCCCC",
-    },
-  },
+  }
 );
 
 
@@ -28,9 +24,12 @@ const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
 
-  
+
+    
+
 
   render () {
     return <AppContainer />;
   }
 }
+
