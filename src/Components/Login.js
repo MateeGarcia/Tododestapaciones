@@ -19,6 +19,7 @@ class Login extends React.Component {
       emailEscrito: "",
       contraseñaEscrita: "",
       botonLogearse: "",
+      dni: "",
     }
   }
 
@@ -28,7 +29,7 @@ class Login extends React.Component {
     if (this.state.emailEscrito.length < 5 || this.state.contraseñaEscrita.length <= 8) {
       Alert.alert("Invalid credentials"); 
     } else {
-      fetch('', {
+      fetch('http://127.0.0.1:8000/api/auth/login/', {
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -37,6 +38,8 @@ class Login extends React.Component {
         body: JSON.stringify({
           mail: (this.state.emailEscrito),
           contraseña: (this.state.contraseñaEscrita),
+          dni: (this.state.dniEscrita),
+
         })
       })
         .then((response) => response.json())
@@ -44,7 +47,6 @@ class Login extends React.Component {
 
           if (responseJson.msg == " Si ") {
 
-            global.UserID = responseJson.UserID;
             this.props.navigation.navigate('PaginaPrincipal');
           }
           else {
@@ -74,6 +76,10 @@ Tododestapaciones
 
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrita: event.nativeEvent.text})}
+          />
+
+          <TextInput style={styles.dniInput} secureTextEntry={false} placeholder="DNI" 
+          onChange={(event) => this.setState({dniEscrita: event.nativeEvent.text})}
           />
           
       
@@ -112,6 +118,15 @@ onPress={this.botonLogearse}
 module.exports = Login;
 
 const styles = StyleSheet.create({
+
+  dniInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
 
   viewTodo: {
     backgroundColor: "#CCCCCC",

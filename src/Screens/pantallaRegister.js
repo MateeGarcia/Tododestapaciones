@@ -24,21 +24,24 @@ class pantallaRegister extends React.Component {
           direccionEscrito: "",
           mailadmEscrito: "",
           celularEscrito: "",
+          dniEscrito: "",
         }
       }
       
 
       botonRegistrarse = () => {
-        fetch ("/API/User", {
+        fetch ("http://127.0.0.1:8000/api/users/", {
           method: "POST",
           headers: {
             accept: "application/json", "content-type": "application/json",
           },
           body: JSON.stringify({
-            nombre: (this.state.nombre),
-            apellido: (this.state.apellido),
-            mail: (this.state.mail),
-            contraseña: (this.state.contraseña),
+            first_name: (this.state.nombreEscrito),
+            last_name: (this.state.apellidoEscrito),
+            email: (this.state.mailEscrito),
+            password: (this.state.contraseñaEscrito),
+            username: (this.state.dniEscrito),
+
             celular: (this.state.celular),
             telefono: (this.state.telefono),
             calle: (this.state.calle),
@@ -74,17 +77,22 @@ class pantallaRegister extends React.Component {
           <TextInput style={styles.contraseñaInput} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
           
+          
+          <TextInput style={styles.dniInput} placeholder="DNI" 
+          onChange={(event) => this.setState({dniEscrito: event.nativeEvent.text})}/>
+
+
 
 
           <TextInput style={styles.direccionInput} placeholder="Dirección" 
-          onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
+          onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/> 
 
           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
           onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
 
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
-
+          
 
 
 
@@ -116,6 +124,16 @@ class pantallaRegister extends React.Component {
 module.exports = pantallaRegister;
 
 const styles = StyleSheet.create({
+
+  dniInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+    paddingBottom: 5,
+  },
 
   siguiente: {
     paddingTop: 130,
