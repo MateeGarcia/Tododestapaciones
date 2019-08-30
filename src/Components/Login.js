@@ -5,7 +5,9 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 class Login extends React.Component {
 
   static navigationOptions = {
+
     title: "Acceso a la cuenta",
+
     headerStyle: {
       backgroundColor: "#CCCCCC",
     }
@@ -63,15 +65,18 @@ class Login extends React.Component {
 <Text style={styles.tituloTododestapacionesMenu}>
 Tododestapaciones
 </Text>
+
+
           <TextInput style={styles.usuarioInput} placeholder="Mail" 
-          onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}
-           />
+          onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}>
+          </TextInput>
+           
 
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrita: event.nativeEvent.text})}
           />
           
-
+      
           
 
 <TouchableHighlight style={styles.botonLoginCompletado} 
@@ -127,7 +132,10 @@ const styles = StyleSheet.create({
   contraseñaInput: {
     padding: 5,
     marginHorizontal: 30,
-    backgroundColor: "red"
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
   },
 
   usuarioInput: {
@@ -135,7 +143,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 100,
     marginHorizontal: 30,
-    backgroundColor: "red"
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
   },
 
   botonLoginCompletado: {

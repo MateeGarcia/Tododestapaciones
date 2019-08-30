@@ -1,15 +1,13 @@
 ﻿import React from "react";
-import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 class pantallaRegister extends React.Component {
 
   static navigationOptions = {
 
-  
-    title: "Registre su cuenta",
     
-
+    title: "Registre su cuenta",
     headerStyle: {
       backgroundColor: "#CCCCCC",
     }
@@ -95,7 +93,11 @@ class pantallaRegister extends React.Component {
 
           <TouchableOpacity style={styles.siguiente} 
           onPress={this.botonRegistrarse}> 
-          <Text> Registrarte </Text>
+          
+          <Image style={styles.imagestyle} 
+    hitSlop={{top: 2, left: 20, bottom: 2, right: 20}}
+    source={require('../img/crearCuenta.png')} />
+
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.siguiente} 
@@ -115,8 +117,74 @@ module.exports = pantallaRegister;
 
 const styles = StyleSheet.create({
   viewInputs: {
+    backgroundColor: "#ffffff",
     alignItems: "center",
     justifyContent: "center",
-  }
+  },
+
+  nombreInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
+
+  apellidoInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
+
+  mailInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
+
+  contraseñaInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
+
+  direccionInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
+
+  mailadmInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
+
+  celularInput: {
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+  },
+
+
 })
 
