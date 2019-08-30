@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
 
   noTienesCuenta: {
     marginHorizontal: 110,
-    marginTop: 85,
+    marginTop: 150,
   },
 
 

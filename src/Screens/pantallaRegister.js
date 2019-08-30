@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿ import React from "react";
 import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -116,6 +116,11 @@ class pantallaRegister extends React.Component {
 module.exports = pantallaRegister;
 
 const styles = StyleSheet.create({
+
+  siguiente: {
+    paddingTop: 130,
+  },  
+
   viewInputs: {
     backgroundColor: "#CCCCCC",
     alignItems: "center",
@@ -129,7 +134,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: "#000000",
     borderWidth: 0.5,
-    paddingTop: 30,
+    paddingBottom: 5,
   },
 
   apellidoInput: {
