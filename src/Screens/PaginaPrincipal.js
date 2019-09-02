@@ -4,6 +4,16 @@ import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight} f
 import Boton from "../Components/Boton"
 
 class PaginaPrincipal extends React.Component {
+
+  static navigationOptions = {
+
+    tittle: "Pagina principal",
+
+    headerStyle: {
+      backgroundColor: "#CCCCCC",
+    }
+  };
+
     render(){
         return(
             <View style={styles.titulo}>
@@ -29,6 +39,42 @@ class PaginaPrincipal extends React.Component {
       </Text>
     </TouchableHighlight>
 
+    <Text>
+      
+    </Text>
+
+    <Text>
+      
+      </Text>
+
+      <Text>
+      
+      </Text>
+
+      <Text>
+      
+      </Text>
+
+      <Text>
+      
+      </Text>
+
+      <Text>
+      
+      </Text>
+
+      <Text>
+      
+      </Text>
+
+      <Text>
+      
+      </Text>
+
+      <Text>
+      
+      </Text>
+
     </View> 
         );
     }
@@ -37,59 +83,50 @@ class PaginaPrincipal extends React.Component {
 const styles = StyleSheet.create({
 
   botonLogin:{
-    alignItems: 'center',
-    width: 300,
-    height: 30,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 10,
-    marginBottom: 310,
-    borderWidth: 4,
-    borderRadius: 0.5,
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+    paddingBottom: 5,
+    marginTop: 60,
   },
 
   botonLogin2:{
-    alignItems: 'center',
-    width: 300,
-    height: 30,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 10,
-    marginBottom: 310,
-    borderWidth: 4,
-    borderRadius: 0.5,
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+    paddingBottom: 5,
+    marginTop: 120,
   },
 
   botonLogin3:{
-    alignItems: 'center',
-    width: 300,
-    height: 30,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 10,
-    marginBottom: 310,
-    borderWidth: 4,
-    borderRadius: 0.5,
+    padding: 5,
+    marginHorizontal: 30,
+    backgroundColor: "#ffffff",
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 0.5,
+    paddingBottom: 5,
+    marginTop: 121,
   },
 
 
     titulo: {
-      flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: "#CCCCCC",
     },
   
     tituloTododestapaciones: {
-    flex: 1,
     alignItems: "center",
     justifyContent:"center",
     fontSize: 30,
     marginTop: 25,
-backgroundColor: "orange",
     }
   });
 

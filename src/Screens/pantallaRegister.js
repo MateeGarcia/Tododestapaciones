@@ -62,43 +62,59 @@ class pantallaRegister extends React.Component {
           <TextInput style={styles.nombreInput} placeholder="Nombre" 
           onChange={(event) => this.setState({nombreEscrito: event.nativeEvent.text})}/>
 
+          <Text> 
 
+          </Text>
 
           <TextInput style={styles.apellidoInput} placeholder="Apellido" 
           onChange={(event) => this.setState({apellidoEscrito: event.nativeEvent.text})}/>
 
-
+          <Text> 
+            
+          </Text>
 
           <TextInput style={styles.mailInput} placeholder="Mail" 
           onChange={(event) => this.setState({mailEscrito: event.nativeEvent.text})}/>
 
-
+            <Text> 
+            
+            </Text>
 
           <TextInput style={styles.contraseñaInput} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
           
-          
+            <Text> 
+            
+            </Text>
           <TextInput style={styles.dniInput} placeholder="DNI" 
           onChange={(event) => this.setState({dniEscrito: event.nativeEvent.text})}/>
 
-
+            <Text> 
+            
+            </Text>
 
 
           <TextInput style={styles.direccionInput} placeholder="Dirección" 
           onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/> 
 
+            <Text> 
+            
+            </Text>
+
           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
           onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
 
+            <Text> 
+            
+            </Text>
+
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
+
+            <Text>
+              
+            </Text>
           
-
-
-
-
-
-
           <TouchableOpacity style={styles.siguiente} 
           onPress={this.botonRegistrarse}> 
           
@@ -108,9 +124,7 @@ class pantallaRegister extends React.Component {
 
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.siguiente} 
-          onPress={() => {this.props.navigation.navigate('pantallaRegisterSiguiente')}}> 
-          </TouchableOpacity>
+
           
 
         </View>
@@ -136,12 +150,13 @@ const styles = StyleSheet.create({
   },
 
   siguiente: {
-    paddingTop: 130,
+    paddingTop: 30,
+    alignItems: "center",
+    paddingBottom: 80,
   },  
 
   viewInputs: {
     backgroundColor: "#CCCCCC",
-    alignItems: "center",
     justifyContent: "center",
   },
 
@@ -153,6 +168,8 @@ const styles = StyleSheet.create({
     borderColor: "#000000",
     borderWidth: 0.5,
     paddingBottom: 5,
+    marginTop: 40,
+    
   },
 
   apellidoInput: {
@@ -162,6 +179,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: "#000000",
     borderWidth: 0.5,
+    
   },
 
   mailInput: {

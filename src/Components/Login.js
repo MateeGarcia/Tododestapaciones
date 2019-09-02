@@ -27,7 +27,7 @@ class Login extends React.Component {
 
   botonLogearse = () => {
     if (this.state.emailEscrito.length < 5 || this.state.contraseñaEscrita.length <= 8) {
-      Alert.alert("Invalid credentials"); 
+      Alert.alert("Credenciales Invalidas"); 
     } else {
       fetch('http://127.0.0.1:8000/api/auth/login/', {
         method: 'POST',
