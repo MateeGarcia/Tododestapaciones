@@ -2,6 +2,8 @@
 import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+var respuesta;
+
 class Login extends React.Component {
 
   static navigationOptions = {
@@ -26,10 +28,10 @@ class Login extends React.Component {
 
 
   botonLogearse = () => {
-    if (this.state.emailEscrito.length < 5 || this.state.contraseñaEscrita.length <= 8) {
+    if (this.state.emailEscrito.length < 5 || this.state.contraseñaEscrita.length <= 5) {
       Alert.alert("Credenciales Invalidas"); 
     } else {
-      fetch('http://127.0.0.1:8000/api/auth/login/', {
+      fetch('http://10.8.17.18:8000/api/auth/login/', {
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -37,15 +39,15 @@ class Login extends React.Component {
         },
         body: JSON.stringify({
           mail: (this.state.emailEscrito),
-          contraseña: (this.state.contraseñaEscrita),
-          dni: (this.state.dniEscrita),
+          password: (this.state.contraseñaEscrita),
+          username: (this.state.dniEscrita),
 
         })
       })
-        .then((response) => response.json())
+        .then((response) => {response.json(); respuesta = response;})
         .then((responseJson) => {
-
-          if (responseJson.msg == " Si ") {
+          console.log(respuesta);
+          if (respuesta.ok) {
 
             this.props.navigation.navigate('PaginaPrincipal');
           }

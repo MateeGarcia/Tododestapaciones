@@ -30,7 +30,7 @@ class pantallaRegister extends React.Component {
       
 
       botonRegistrarse = () => {
-        fetch ("http://127.0.0.1:8000/api/users/", {
+        fetch ("http://10.8.17.18:8000/api/users/", {
           method: "POST",
           headers: {
             accept: "application/json", "content-type": "application/json",
