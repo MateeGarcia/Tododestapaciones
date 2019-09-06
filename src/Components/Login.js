@@ -22,13 +22,14 @@ class Login extends React.Component {
       contraseñaEscrita: "",
       botonLogearse: "",
       dni: "",
+      dniEscrita: "",
     }
   }
 
 
 
   botonLogearse = () => {
-    if (this.state.emailEscrito.length < 5 || this.state.contraseñaEscrita.length <= 5) {
+    if (this.state.dniEscrita.length < 7 || this.state.contraseñaEscrita.length <= 5) {
       Alert.alert("Credenciales Invalidas"); 
     } else {
       fetch('http://10.8.17.18:8000/api/auth/login/', {
@@ -71,18 +72,24 @@ Tododestapaciones
 </Text>
 
 
-          <TextInput style={styles.usuarioInput} placeholder="Mail" 
-          onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}>
-          </TextInput>
+<TextInput style={styles.usuarioInput} secureTextEntry={false} placeholder="DNI" 
+          onChange={(event) => this.setState({dniEscrita: event.nativeEvent.text})}
+          />
+
+
            
 
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrita: event.nativeEvent.text})}
           />
 
-          <TextInput style={styles.dniInput} secureTextEntry={false} placeholder="DNI" 
-          onChange={(event) => this.setState({dniEscrita: event.nativeEvent.text})}
-          />
+
+            {/*        <TextInput style={styles.usuarioInput} placeholder="Mail" 
+          onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}>
+          </TextInput>
+    */}
+
+
           
       
           

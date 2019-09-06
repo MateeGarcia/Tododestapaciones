@@ -101,7 +101,7 @@ class pantallaRegister extends React.Component {
             
             </Text>
 
-          <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
+          <TextInput style={styles.mailadmInput} placeholder="Mail de la administración (Opcional)" 
           onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
 
             <Text> 
