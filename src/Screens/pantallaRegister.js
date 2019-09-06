@@ -36,12 +36,22 @@ class pantallaRegister extends React.Component {
             accept: "application/json", "content-type": "application/json",
           },
           body: JSON.stringify({
-            first_name: (this.state.nombreEscrito),
-            last_name: (this.state.apellidoEscrito),
+            username: (this.state.nombreEscrito),
+            Last_name: (this.state.apellidoEscrito),
             email: (this.state.mailEscrito),
             password: (this.state.contraseñaEscrito),
-            username: (this.state.dniEscrito),
+            dni: (this.state.dniEscrito),
+            celular: (this.state.celularEscrito),
 
+          })
+        })
+
+   {/*     fetch ("http://10.8.17.18:8000/api/Direccion/", {
+          method: "POST",
+          headers: {
+            accept: "application/json", "content-type": "application/json",
+          },
+          body: JSON.stringify({
             celular: (this.state.celular),
             telefono: (this.state.telefono),
             calle: (this.state.calle),
@@ -49,6 +59,7 @@ class pantallaRegister extends React.Component {
             piso: (this.state.piso),
           })
         })
+      */}
       }
 
 

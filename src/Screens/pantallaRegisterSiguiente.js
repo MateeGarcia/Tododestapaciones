@@ -15,7 +15,7 @@ class pantallaRegisterSiguiente extends React.Component {
 
 
       botonRegistrarse = () => {
-        fetch ("/API/User", {
+        fetch ("http://10.8.17.18:8000/api/User", {
           method: "POST",
           headers: {
             accept: "application/json", "content-type": "application/json",
@@ -28,10 +28,8 @@ class pantallaRegisterSiguiente extends React.Component {
             celular: (this.state.celular),
           })
         })
-      }
-
-      botonRegister2 = () => {
-        fetch ("/API/Direccion", {
+        
+        fetch ("http://10.8.17.18:8000/api/Direccion", {
           method: "POST",
           headers: {
             accept: "application/json", "content-type": "application/json",
@@ -43,7 +41,9 @@ class pantallaRegisterSiguiente extends React.Component {
             piso: (this.state.piso),
           })
     })
+        
       }
+
 
 
       render() {
