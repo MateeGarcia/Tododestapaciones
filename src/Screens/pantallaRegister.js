@@ -37,16 +37,21 @@ class pantallaRegister extends React.Component {
           },
           body: JSON.stringify({
 
-            profile:{
-              celular: (this.state.celularEscrito),
-              id_direccion: ("http://10.8.17.18:8000/api/Direccion/1/"),
-            },
 
             email: (this.state.mailEscrito),
             first_name: (this.state.nombreEscrito),
             last_name: (this.state.apellidoEscrito),
             password: (this.state.contraseñaEscrito),
             dni: (this.state.dniEscrito),
+
+            profile:{
+              id_direccion: ["http://10.8.17.18:8000/api/Direccion/1/"],
+              photo: null,
+              nacimiento: null,
+              celular: (this.state.celularEscrito),
+            },
+
+
 
           })
         })
