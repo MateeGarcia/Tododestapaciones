@@ -29,7 +29,7 @@ class Login extends React.Component {
 
 
   botonLogearse = () => {
-    if (this.state.dniEscrita.length < 7 || this.state.contraseñaEscrita.length <= 5) {
+    if (this.state.dniEscrita.length < 7 || this.state.contraseñaEscrita.length <= 1) {
       Alert.alert("Credenciales Invalidas"); 
     } else {
       fetch('http://10.8.17.18:8000/api/auth/login/', {

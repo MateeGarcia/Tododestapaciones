@@ -45,7 +45,7 @@ class pantallaRegister extends React.Component {
             dni: (this.state.dniEscrito),
 
             profile:{
-              id_direccion: ["http://10.8.17.18:8000/api/Direccion/1/"],
+              id_direccion: [1],
               photo: null,
               nacimiento: null,
               celular: (this.state.celularEscrito),
@@ -55,21 +55,21 @@ class pantallaRegister extends React.Component {
 
           })
         })
+        .then((response) => {response.json(); respuesta = response;})
+        .then((responseJson) => {
+          console.log(respuesta);
+          if (respuesta.ok) {
 
-   {/*     fetch ("http://10.8.17.18:8000/api/Direccion/", {
-          method: "POST",
-          headers: {
-            accept: "application/json", "content-type": "application/json",
-          },
-          body: JSON.stringify({
-            celular: (this.state.celular),
-            telefono: (this.state.telefono),
-            calle: (this.state.calle),
-            numero_calle: (this.state.numero_calle),
-            piso: (this.state.piso),
-          })
+            this.props.navigation.navigate('Login');
+          }
+          else {
+            Alert.alert("Datos invalidos");
+          }
         })
-      */}
+
+        .catch((error) => {
+          console.error(error);
+        });
       }
 
 
@@ -101,7 +101,7 @@ class pantallaRegister extends React.Component {
             
             </Text>
 
-          <TextInput style={styles.contraseñaInput} placeholder="Contraseña" 
+          <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
           
             <Text> 
@@ -122,13 +122,11 @@ class pantallaRegister extends React.Component {
             
             </Text>
 
+{/*
           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración (Opcional)" 
           onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
-
-            <Text> 
-            
-            </Text>
-
+*/}
+          
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
 
