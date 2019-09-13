@@ -8,7 +8,7 @@ class OrnitorrincoScreen extends React.Component {
             <Text>
                 <MapView>
                     region={{
-                        latitude: 59.3293234999999,
+                        latitude: 59.329323499999,
                         longitude: 18,
                         longitudeDelta: 0.1,
                         longitudeDelta: 0.1,
