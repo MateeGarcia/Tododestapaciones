@@ -11,7 +11,8 @@ const RootStack = createStackNavigator(
     Login: Login,
     PaginaPrincipal: PaginaPrincipal,
     pantallaRegister: pantallaRegister,
-    pantallaRegisterSiguiente: pantallaRegisterSiguiente
+    pantallaRegisterSiguiente: pantallaRegisterSiguiente,
+    pantallaPedirTurno: pantallaPedirTurno,
   },
 
   {

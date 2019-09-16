@@ -21,7 +21,7 @@ class PaginaPrincipal extends React.Component {
         Tododestapaciones
       </Text>
 
-      <TouchableHighlight style={styles.botonLogin} onPress={() => {this.props.navigation.navigate('Login')}}>
+      <TouchableHighlight style={styles.botonLogin} onPress={() => {this.props.navigation.navigate('pantallaPedirTurno')}}>
       <Text>
        Hacer un pedido
       </Text>
