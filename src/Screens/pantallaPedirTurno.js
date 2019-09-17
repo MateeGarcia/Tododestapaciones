@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, Picker} from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker} from 'react-native';
 
 class pantallaPedirTurno extends React.Component {
     
@@ -12,11 +12,16 @@ class pantallaPedirTurno extends React.Component {
         }
       };
 
+      constructor(props) {
+        super(props);
+        this.state = {
+          tipoDeDestapacion: "",
+        }
+      }
+
     render(){
             return(
                 <View style="viewPedidos">
-
-                <Text> hola </Text>
         <TextInput style={styles.direccionInput} placeholder="Dirección" 
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
@@ -27,15 +32,13 @@ class pantallaPedirTurno extends React.Component {
         onChange={(event) => this.setState({horaEscrito: event.nativeEvent.text})}/>
 
         <Picker
-        selectedValue={this.state.language}
-        style={{height: 50, width: 100}}
-        onValueChange={(itemValue, itemIndex) =>
-        this.setState({language: itemValue})
+        style={{height: 50, width: 170}}
+        onValueChange={(itemValue) => this.setState({tipoDeDestapacion: itemValue})
         }>
-
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-        
+          
+        <Picker.Item label="Destapación" value="destapacion" />
+        <Picker.Item label="Desagote" value="desagote" />
+        <Picker.Item label="Limpieza Hidrojet" value="hidrojet" />
         </Picker>
 
         </View>
@@ -48,6 +51,7 @@ const styles = StyleSheet.create({
     viewPedidos: {
         alignItems: "center",
         alignContent: "center",
+        backgroundColor: "#CCCCCC",
     }
 })
 
