@@ -19,6 +19,23 @@ class pantallaPedirTurno extends React.Component {
         }
       }
 
+      botonPedirTurno = () => {
+        botonRegistrarse = () => {
+          fetch ("http://10.8.17.18:8000/api/users/", {
+            method: "POST",
+            headers: {
+              accept: "application/json", "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              direccion: (this.state.direccionEscrito),
+              fecha: (this.state.fechaEscrito),
+              hora: (this.state.horaEscrito),
+              tipo: (this.state.tipoDeDestapacion),
+            })
+          });
+        }   
+      }
+
     render(){
             return(
                 <View style="viewPedidos">
@@ -40,6 +57,10 @@ class pantallaPedirTurno extends React.Component {
         <Picker.Item label="Desagote" value="desagote" />
         <Picker.Item label="Limpieza Hidrojet" value="hidrojet" />
         </Picker>
+
+        <TouchableOpacity style={styles.botonPedirTurno} onPress={this.botonPedirTurno}>
+          Solicitar turno
+        </TouchableOpacity>
 
         </View>
             );
