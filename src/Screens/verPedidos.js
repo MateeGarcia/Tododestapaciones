@@ -1,25 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, Navigator, TouchableHighlight} from 'react-native';
 
 class verPedidos extends React.Component {
-
-  static navigationOptions = {
-
-    tittle: "Turnos Asignados",
-
-    headerStyle: {
-      backgroundColor: "#CCCCCC",
-    }
-  };
-
     render(){
         return(
+            fetch ("", {
+          method: "GET",
+          headers: {
+            accept: "application/json", "content-type": "application/json",
+          },
+          body: JSON.stringify({
 
-        )
+          })
+        })   
+        );
+    }
 }
-
-const styles = StyleSheet.create({
-
-  });
 
 module.exports = verPedidos;
