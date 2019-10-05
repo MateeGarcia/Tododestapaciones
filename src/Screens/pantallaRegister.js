@@ -21,56 +21,11 @@ class pantallaRegister extends React.Component {
           apellidoEscrito: "",
           mailEscrito: "",
           contraseñaEscrito: "",
-          direccionEscrito: "",
-          mailadmEscrito: "",
-          celularEscrito: "",
-          dniEscrito: "",
         }
       }
       
 
-      botonRegistrarse = () => {
-        fetch ("http://10.8.17.18:8000/api/users/", {
-          method: "POST",
-          headers: {
-            accept: "application/json", "content-type": "application/json",
-          },
-          body: JSON.stringify({
-
-
-            email: (this.state.mailEscrito),
-            first_name: (this.state.nombreEscrito),
-            last_name: (this.state.apellidoEscrito),
-            password: (this.state.contraseñaEscrito),
-            dni: (this.state.dniEscrito),
-
-            profile:{
-              id_direccion: [1],
-              photo: null,
-              nacimiento: null,
-              celular: (this.state.celularEscrito),
-            },
-
-
-
-          })
-        })
-        .then((response) => {response.json(); respuesta = response;})
-        .then((responseJson) => {
-          console.log(respuesta);
-          if (respuesta.ok) {
-
-            this.props.navigation.navigate('Login');
-          }
-          else {
-            Alert.alert("Datos invalidos");
-          }
-        })
-
-        .catch((error) => {
-          console.error(error);
-        });
-      }
+      
 
 
 
@@ -103,7 +58,8 @@ class pantallaRegister extends React.Component {
 
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
-          
+
+          {/*
             <Text> 
             
             </Text>
@@ -122,10 +78,10 @@ class pantallaRegister extends React.Component {
             
             </Text>
 
-{/*
+
           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración (Opcional)" 
           onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
-*/}
+
           
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
@@ -133,13 +89,14 @@ class pantallaRegister extends React.Component {
             <Text>
               
             </Text>
-          
+          */}
+
           <TouchableOpacity style={styles.siguiente} 
-          onPress={this.botonRegistrarse}> 
+          onPress={() => {this.props.navigation.navigate('pantallaRegisterSiguiente')}}> 
           
           <Image style={styles.imagestyle} 
     hitSlop={{top: 2, left: 20, bottom: 2, right: 20}}
-    source={require('../img/crearCuenta.png')} />
+    source={require('../img/siguiente.png')} />
 
           </TouchableOpacity>
 
@@ -175,8 +132,10 @@ const styles = StyleSheet.create({
   },  
 
   viewInputs: {
+    flex: 1,
     backgroundColor: "#CCCCCC",
     justifyContent: "center",
+    justifyContent: "space-around",
   },
 
   nombreInput: {

@@ -38,7 +38,8 @@ class pantallaPedirTurno extends React.Component {
 
     render(){
             return(
-                <View style="viewPedidos">
+                <View style={styles.viewPedidos}>
+
         <TextInput style={styles.direccionInput} placeholder="Dirección" 
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
@@ -47,6 +48,7 @@ class pantallaPedirTurno extends React.Component {
 
         <TextInput style={styles.horaInput} placeholder="Hora" 
         onChange={(event) => this.setState({horaEscrito: event.nativeEvent.text})}/>
+        
 
         <Picker
         style={{height: 50, width: 170}}
@@ -59,7 +61,9 @@ class pantallaPedirTurno extends React.Component {
         </Picker>
 
         <TouchableOpacity style={styles.botonPedirTurno} onPress={this.botonPedirTurno}>
+          <Text>
           Solicitar turno
+          </Text>
         </TouchableOpacity>
 
         </View>
@@ -70,10 +74,12 @@ class pantallaPedirTurno extends React.Component {
 
 const styles = StyleSheet.create({
     viewPedidos: {
+        flex: 1,
         alignItems: "center",
-        alignContent: "center",
         backgroundColor: "#CCCCCC",
-    }
+        justifyContent: "center",
+        justifyContent: "space-around",
+    },
 })
 
 

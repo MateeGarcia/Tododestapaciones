@@ -6,6 +6,7 @@ import PaginaPrincipal from "./src/Screens/PaginaPrincipal"
 import pantallaRegister from "./src/Screens/pantallaRegister"
 import pantallaRegisterSiguiente from "./src/Screens/pantallaRegisterSiguiente"
 import pantallaPedirTurno from "./src/Screens/pantallaPedirTurno"
+import verPedidos from "./src/Screens/verPedidos"
 
 const RootStack = createStackNavigator(
   {
@@ -14,10 +15,11 @@ const RootStack = createStackNavigator(
     pantallaRegister: pantallaRegister,
     pantallaRegisterSiguiente: pantallaRegisterSiguiente,
     pantallaPedirTurno: pantallaPedirTurno,
+    verPedidos: verPedidos,
   },
 
   {
-    initialRouteName: "pantallaPedirTurno",
+    initialRouteName: "PaginaPrincipal",
   }
 );
 
