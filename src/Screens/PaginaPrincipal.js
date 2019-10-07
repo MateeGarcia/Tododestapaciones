@@ -27,7 +27,7 @@ class PaginaPrincipal extends React.Component {
       </Text>
     </TouchableHighlight>
 
-    <TouchableHighlight style={styles.botonLogin2} onPress={() => {this.props.navigation.navigate('Login')}}>
+    <TouchableHighlight style={styles.botonLogin2} onPress={() => {this.props.navigation.navigate('verPedidos')}}>
       <Text>
        Ver mi pedido
       </Text>
