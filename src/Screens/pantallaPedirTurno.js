@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker} from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker, Image, DatePickerAndroid, DatePickerIOS} from 'react-native';
+import DatePicker from 'react-native-datepicker'
 
 class pantallaPedirTurno extends React.Component {
     
@@ -8,7 +9,7 @@ class pantallaPedirTurno extends React.Component {
         tittle: "Pedido de turnos",
     
         headerStyle: {
-          backgroundColor: "#CCCCCC",
+          backgroundColor: "white",
         }
       };
 
@@ -40,25 +41,58 @@ class pantallaPedirTurno extends React.Component {
             return(
                 <View style={styles.viewPedidos}>
 
-        <TextInput style={styles.direccionInput} placeholder="Dirección" 
+<DatePicker
+        style={{width: 200}}
+        date={this.state.date}
+        mode="date"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate="2016-05-01"
+        maxDate="2016-06-01"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+          // ... You can check the source to find the other keys.
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
+      />
+
+        <TextInput style={styles.direccionInput} placeholder="Dirección"
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
-        <TextInput style={styles.fechaInput} placeholder="Fecha" 
-        onChange={(event) => this.setState({fechaEscrito: event.nativeEvent.text})}/>
+        <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
-        <TextInput style={styles.horaInput} placeholder="Hora" 
-        onChange={(event) => this.setState({horaEscrito: event.nativeEvent.text})}/>
-        
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
-        <Picker
-        style={{height: 50, width: 170}}
-        onValueChange={(itemValue) => this.setState({tipoDeDestapacion: itemValue})
-        }>
-          
-        <Picker.Item label="Destapación" value="destapacion" />
-        <Picker.Item label="Desagote" value="desagote" />
-        <Picker.Item label="Limpieza Hidrojet" value="hidrojet" />
-        </Picker>
+<Picker
+  selectedValue={this.state.tipoDeDestapacion}
+  style={{height: 50, width: 190}}
+  onValueChange={(itemValue, itemIndex) =>
+    this.setState({tipoDeDestapacion: itemValue})
+  }>
+  <Picker.Item label="Destapación" value="destapacion" />
+  <Picker.Item label="Desagote" value="desagote" />
+  <Picker.Item label="Limpieza Hidrojet" value="hidrojet" />
+
+</Picker>
+
+        <Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
         <TouchableOpacity style={styles.botonPedirTurno} onPress={this.botonPedirTurno}>
           <Text>
@@ -76,9 +110,9 @@ const styles = StyleSheet.create({
     viewPedidos: {
         flex: 1,
         alignItems: "center",
-        backgroundColor: "#CCCCCC",
+        backgroundColor: "white",
         justifyContent: "center",
-        justifyContent: "space-around",
+        
     },
 })
 
