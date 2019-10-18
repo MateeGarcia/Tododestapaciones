@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker, Image, DatePickerAndroid, DatePickerIOS} from 'react-native';
-import DatePicker from 'react-native-datepicker'
+import DatePicker from 'react-native-datepicker';
 
 class pantallaPedirTurno extends React.Component {
     
@@ -41,31 +41,6 @@ class pantallaPedirTurno extends React.Component {
             return(
                 <View style={styles.viewPedidos}>
 
-<DatePicker
-        style={{width: 200}}
-        date={this.state.date}
-        mode="date"
-        placeholder="select date"
-        format="YYYY-MM-DD"
-        minDate="2016-05-01"
-        maxDate="2016-06-01"
-        confirmBtnText="Confirm"
-        cancelBtnText="Cancel"
-        customStyles={{
-          dateIcon: {
-            position: 'absolute',
-            left: 0,
-            top: 4,
-            marginLeft: 0
-          },
-          dateInput: {
-            marginLeft: 36
-          }
-          // ... You can check the source to find the other keys.
-        }}
-        onDateChange={(date) => {this.setState({date: date})}}
-      />
-
         <TextInput style={styles.direccionInput} placeholder="Dirección"
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
@@ -76,6 +51,21 @@ class pantallaPedirTurno extends React.Component {
 <Text></Text>
 <Text></Text>
 <Text></Text>
+
+<DatePicker
+      date={this.state.date}
+      onDateChange={date => this.setState({ date })}
+    />
+
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
+<DatePicker
+      date={this.state.date}
+      onDateChange={date => this.setState({ date })}
+      mode={"time"}
+    />
 
 <Picker
   selectedValue={this.state.tipoDeDestapacion}
