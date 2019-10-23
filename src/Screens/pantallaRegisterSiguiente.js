@@ -24,10 +24,10 @@ class pantallaRegisterSiguiente extends React.Component {
           body: JSON.stringify({
 
 
-            email: (this.state.mailEscrito),
-            first_name: (this.state.nombreEscrito),
-            last_name: (this.state.apellidoEscrito),
-            password: (this.state.contraseñaEscrito),
+            email: (global.mailEscrito),
+            first_name: (global.nombreEscrito),
+            last_name: (global.apellidoEscrito),
+            password: (global.contraseñaEscrito),
             dni: (this.state.dniEscrito),
 
             profile:{

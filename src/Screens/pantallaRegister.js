@@ -61,41 +61,20 @@ class pantallaRegister extends React.Component {
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
 
-          {/*
-            <Text> 
-            
-            </Text>
-          <TextInput style={styles.dniInput} placeholder="DNI" 
-          onChange={(event) => this.setState({dniEscrito: event.nativeEvent.text})}/>
-
-            <Text> 
-            
-            </Text>
-
-
-          <TextInput style={styles.direccionInput} placeholder="Dirección" 
-          onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/> 
-
-            <Text> 
-            
-            </Text>
-
-
-          <TextInput style={styles.mailadmInput} placeholder="Mail de la administración (Opcional)" 
-          onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
-
-          
-          <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
-          onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
-
-            <Text>
-              
-            </Text>
-          */}
-
           <TouchableOpacity style={styles.siguiente} 
-          onPress={() => {this.props.navigation.navigate('pantallaRegisterSiguiente')}}> 
+          onPress={() => {this.props.navigation.navigate('pantallaRegisterSiguiente')}}
+          onPress={() => {global.nombreEscrito = nombreEscrito}}
+          onPress={() => {global.apellidoEscrito = apellidoEscrito}}
+          onPress={() => {global.mailEscrito = mailEscrito}}
+          onPress={() => {global.contraseñaEscrito = contraseñaEscrito}}> 
           
+          
+          
+          
+          
+
+
+
           <Image style={styles.imagestyle} 
     hitSlop={{top: 2, left: 20, bottom: 2, right: 20}}
     source={require('../img/siguiente.png')} />
