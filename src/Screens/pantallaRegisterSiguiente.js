@@ -36,11 +36,11 @@ class pantallaRegisterSiguiente extends React.Component {
               nacimiento: null,
               celular: (this.state.celularEscrito),
             },
-
-
-
           })
         })
+
+        
+        .then((responseid) => {response.id(); userid = responseid;})
         .then((response) => {response.json(); respuesta = response;})
         .then((responseJson) => {
           console.log(respuesta);
@@ -52,6 +52,10 @@ class pantallaRegisterSiguiente extends React.Component {
             Alert.alert("Datos invalidos");
           }
         })
+
+        
+        
+        
 
         .catch((error) => {
           console.error(error);
