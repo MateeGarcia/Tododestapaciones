@@ -4,6 +4,23 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 class pantallaRegister extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    global.nombreEscrito = "";
+    global.apellidoEscrito = "";
+    global.mailEscrito = "";
+    global.contraseñaEscrito = "";
+    
+    this.state = {
+      nombreEscrito: "",
+      apellidoEscrito: "",
+      mailEscrito: "",
+      contraseñaEscrito: "",
+    }
+
+}
+
   static navigationOptions = {
 
     
@@ -14,23 +31,8 @@ class pantallaRegister extends React.Component {
 
   };
   
-    constructor(props) {
-        super(props);
-        this.state = {
-          nombreEscrito: "",
-          apellidoEscrito: "",
-          mailEscrito: "",
-          contraseñaEscrito: "",
-        }
-      }
-      
 
       
-
-
-
-
-
       render() {
         return (
         <View style={styles.viewInputs}>

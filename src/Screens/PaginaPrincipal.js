@@ -5,6 +5,9 @@ import Boton from "../Components/Boton"
 
 class PaginaPrincipal extends React.Component {
 
+
+
+
   static navigationOptions = {
 
     tittle: "Pagina principal",
