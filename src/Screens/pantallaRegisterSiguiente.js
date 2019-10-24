@@ -6,6 +6,7 @@ class pantallaRegisterSiguiente extends React.Component {
 
     constructor(props) {
         super(props);
+          global.userid = "",
         this.state = {
           direccionEscrito: "",
           mailadmEscrito: "",
@@ -40,7 +41,7 @@ class pantallaRegisterSiguiente extends React.Component {
         })
 
         
-        .then((responseid) => {response.id(); userid = responseid;})
+        .then((responseid) => {response.id(); global.userid = responseid;})
         .then((response) => {response.json(); respuesta = response;})
         .then((responseJson) => {
           console.log(respuesta);
