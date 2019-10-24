@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableHighlight, Alert, AsyncStorage, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 class pantallaRegisterSiguiente extends React.Component {
@@ -66,14 +66,20 @@ class pantallaRegisterSiguiente extends React.Component {
         return (
         <View style={styles.viewInputs}>
 
-          <TextInput style={styles.direccionInput} placeholder="Dirección" 
-          onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
+          <TextInput style={styles.dniInput} placeholder="DNI" 
+          onChange={(event) => this.setState({dniEscrito: event.nativeEvent.text})}/>
+          <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
           onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
+          <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
+          <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
           <TouchableOpacity style={styles.siguiente} 
           onPress={this.botonRegistrarse}> 
@@ -95,7 +101,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#CCCCCC"
+    backgroundColor: "white"
   }
 })
 

@@ -11,15 +11,12 @@ class pantallaRegister extends React.Component {
     global.apellidoEscrito = "";
     global.mailEscrito = "";
     global.contraseñaEscrito = "";
-    
-    this.state = {
-      nombreEscrito: "",
-      apellidoEscrito: "",
-      mailEscrito: "",
-      contraseñaEscrito: "",
-    }
 
 }
+
+  guardarGlobal = () => {
+    this.props.navigation.navigate('pantallaRegisterSiguiente');
+  }
 
   static navigationOptions = {
 
@@ -36,44 +33,34 @@ class pantallaRegister extends React.Component {
       render() {
         return (
         <View style={styles.viewInputs}>
-
           <TextInput style={styles.nombreInput} placeholder="Nombre" 
-          onChange={(event) => this.setState({nombreEscrito: event.nativeEvent.text})}/>
+          onChange={(event) => {global.nombreEscrito = event.nativeEvent.text}}/>
 
           <Text> 
 
           </Text>
 
           <TextInput style={styles.apellidoInput} placeholder="Apellido" 
-          onChange={(event) => this.setState({apellidoEscrito: event.nativeEvent.text})}/>
+          onChange={(event) => {global.apellidoEscrito = event.nativeEvent.text}}/>
 
           <Text> 
             
           </Text>
 
           <TextInput style={styles.mailInput} placeholder="Mail" 
-          onChange={(event) => this.setState({mailEscrito: event.nativeEvent.text})}/>
+          onChange={(event) => {global.mailEscrito = event.nativeEvent.text}}/>
 
             <Text> 
-            
+              
             </Text>
 
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
-          onChange={(event) => this.setState({contraseñaEscrito: event.nativeEvent.text})}/>
+          onChange={(event) => {global.contraseñaEscrito = event.nativeEvent.text}}/>
 
           <TouchableOpacity style={styles.siguiente} 
-          onPress={() => {this.props.navigation.navigate('pantallaRegisterSiguiente')}}
-          onPress={() => {global.nombreEscrito = nombreEscrito}}
-          onPress={() => {global.apellidoEscrito = apellidoEscrito}}
-          onPress={() => {global.mailEscrito = mailEscrito}}
-          onPress={() => {global.contraseñaEscrito = contraseñaEscrito}}> 
-          
-          
-          
-          
-          
+           onPress={this.guardarGlobal}>
 
-
+          
 
           <Image style={styles.imagestyle} 
     hitSlop={{top: 2, left: 20, bottom: 2, right: 20}}
