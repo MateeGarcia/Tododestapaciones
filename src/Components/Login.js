@@ -17,6 +17,7 @@ class Login extends React.Component {
 
   constructor(props) {
     super(props);
+    global.userid = "";
     this.state = {
       emailEscrito: "",
       contraseñaEscrita: "",
@@ -46,6 +47,8 @@ class Login extends React.Component {
 
         })
       })
+        .then((response) => {global.userid = response.id})
+        
         .then((response) => {response.json(); respuesta = response;})
         .then((responseJson) => {
           console.log(respuesta);

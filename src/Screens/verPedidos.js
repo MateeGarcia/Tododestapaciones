@@ -17,13 +17,16 @@ class verPedidos extends React.Component {
   
     render(){
 
-      fetch ("", {
+      fetch ("$global.userid.pk", {
         method: "GET",
         headers: {
           accept: "application/json", "content-type": "application/json",
         },
         body: JSON.stringify({
-          
+             hora: (this.state.hora),
+             fecha: (this.state.fecha), 
+             tipoDeTurno: (this.state.tipoDeTurno),
+             direccion: (this.state.direccion),
         })
       })
 
