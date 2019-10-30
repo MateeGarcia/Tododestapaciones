@@ -80,19 +80,16 @@ Tododestapaciones
 <TextInput style={styles.usuarioInput} secureTextEntry={false} placeholder="DNI" 
           onChange={(event) => this.setState({dniEscrita: event.nativeEvent.text})}
           />
-
+<Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
            
 
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrita: event.nativeEvent.text})}
           />
-
-
-            {/*        <TextInput style={styles.usuarioInput} placeholder="Mail" 
-          onChange={(event) => this.setState({emailEscrito: event.nativeEvent.text})}>
-          </TextInput>
-    */}
+<Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
 
           
@@ -144,12 +141,13 @@ const styles = StyleSheet.create({
 
   viewTodo: {
     backgroundColor: "white",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   tituloTododestapacionesMenu: {
-    marginHorizontal:20,
     fontSize: 35,
-    marginTop: 25,
   },
 
   noTienesCuenta: {
@@ -157,29 +155,7 @@ const styles = StyleSheet.create({
     marginTop: 150,
   },
 
-
-  contraseñaInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-  },
-
-  usuarioInput: {
-    padding: 5,
-    marginBottom: 20,
-    marginTop: 100,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-  },
-
   botonLoginCompletado: {
-    backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
     marginTop: 10,
@@ -188,12 +164,8 @@ const styles = StyleSheet.create({
   },
 
   botonRegistrarse: {
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 10,
-    marginBottom: 10,
-    marginHorizontal: 110,
+    alignItems: "flex-end",
+    flex: 2,
   },
     
   
