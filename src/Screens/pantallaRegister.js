@@ -4,6 +4,15 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 class pantallaRegister extends React.Component {
 
+  static navigationOptions = {
+
+    tittle: "Registro",
+
+    headerStyle: {
+      backgroundColor: "orange",
+    }
+  };
+
   constructor(props) {
     super(props);
 
@@ -18,44 +27,50 @@ class pantallaRegister extends React.Component {
     this.props.navigation.navigate('pantallaRegisterSiguiente');
   }
 
-  static navigationOptions = {
-
-    
-    title: "Registre su cuenta",
-    headerStyle: {
-      backgroundColor: "#CCCCCC",
-    }
-
-  };
-  
-
-      
       render() {
         return (
         <View style={styles.viewInputs}>
+          <Text></Text>
+          <Text></Text>
           <TextInput style={styles.nombreInput} placeholder="Nombre" 
           onChange={(event) => {global.nombreEscrito = event.nativeEvent.text}}/>
+                    <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
-          <Text> 
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
-          </Text>
 
           <TextInput style={styles.apellidoInput} placeholder="Apellido" 
           onChange={(event) => {global.apellidoEscrito = event.nativeEvent.text}}/>
+                    <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
 
-          <Text> 
-            
-          </Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
 
           <TextInput style={styles.mailInput} placeholder="Mail" 
           onChange={(event) => {global.mailEscrito = event.nativeEvent.text}}/>
+                    <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
-            <Text> 
-              
-            </Text>
 
           <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => {global.contraseñaEscrito = event.nativeEvent.text}}/>
+                    <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
+
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
+
 
           <TouchableOpacity style={styles.siguiente} 
            onPress={this.guardarGlobal}>
@@ -101,78 +116,9 @@ const styles = StyleSheet.create({
 
   viewInputs: {
     flex: 1,
-    backgroundColor: "#CCCCCC",
+    backgroundColor: "white",
     justifyContent: "center",
-    justifyContent: "space-around",
+    alignItems: "center",
   },
-
-  nombreInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-    paddingBottom: 5,
-    marginTop: 40,
-    
-  },
-
-  apellidoInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-    
-  },
-
-  mailInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-  },
-
-  contraseñaInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-  },
-
-  direccionInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-  },
-
-  mailadmInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-  },
-
-  celularInput: {
-    padding: 5,
-    marginHorizontal: 30,
-    backgroundColor: "#ffffff",
-    borderRadius: 4,
-    borderColor: "#000000",
-    borderWidth: 0.5,
-  },
-
-
 })
 

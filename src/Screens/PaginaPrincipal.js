@@ -13,7 +13,7 @@ class PaginaPrincipal extends React.Component {
     tittle: "Pagina principal",
 
     headerStyle: {
-      backgroundColor: "#CCCCCC",
+      backgroundColor: "orange",
     }
   };
 
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     titulo: {
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: "#CCCCCC",
+      backgroundColor: "white",
     },
   
     tituloTododestapaciones: {

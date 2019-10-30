@@ -4,6 +4,15 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 class pantallaRegisterSiguiente extends React.Component {
 
+  static navigationOptions = {
+
+    tittle: "Registro",
+
+    headerStyle: {
+      backgroundColor: "orange",
+    }
+  };
+
     constructor(props) {
         super(props);
           global.userid = "",
@@ -40,8 +49,6 @@ class pantallaRegisterSiguiente extends React.Component {
           })
         })
 
-        
-        .then((responseid) => {response.id(); global.userid = responseid;})
         .then((response) => {response.json(); respuesta = response;})
         .then((responseJson) => {
           console.log(respuesta);
@@ -72,19 +79,39 @@ class pantallaRegisterSiguiente extends React.Component {
           <Image style={styles.imagestyle} 
     source={require('../img/inputLineaNaranja.png')} />
 
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
           onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
           <Image style={styles.imagestyle} 
     source={require('../img/inputLineaNaranja.png')} />
+
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
           <Image style={styles.imagestyle} 
     source={require('../img/inputLineaNaranja.png')} />
 
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
           <TouchableOpacity style={styles.siguiente} 
           onPress={this.botonRegistrarse}> 
-          <Text> Registrarte </Text>
+
+<Image
+        style={styles.button}
+        source={require('../img/crearCuenta.png')}
+      />
+
           </TouchableOpacity>
 
         </View>

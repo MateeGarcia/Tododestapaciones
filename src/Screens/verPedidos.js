@@ -3,13 +3,22 @@ import { StyleSheet, Text, View, Navigator, TouchableHighlight} from 'react-nati
 
 class verPedidos extends React.Component {
 
+  static navigationOptions = {
+
+    title: "Turnos asignados",
+
+    headerStyle: {
+      backgroundColor: "orange",
+    }
+  };
+  
   constructor(props) {
     super(props);
     this.state = {
-      hora: "12:15",
-      fecha: "07/10/2019",
-      tipoDeTurno: "Destapación",
-      direccion: "Migueletes 699 Piso 7",
+      hora: "",
+      fecha: "",
+      tipoDeTurno: "",
+      direccion: "",
     }
   }
 

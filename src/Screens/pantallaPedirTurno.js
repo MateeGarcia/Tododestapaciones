@@ -9,7 +9,7 @@ class pantallaPedirTurno extends React.Component {
         tittle: "Pedido de turnos",
     
         headerStyle: {
-          backgroundColor: "white",
+          backgroundColor: "orange",
         }
       };
 
@@ -55,6 +55,9 @@ class pantallaPedirTurno extends React.Component {
               <Text>
               {this.state.hour}
               </Text>
+              <Text>
+                {this.state.tipoDeDestapacion}
+              </Text>
 
         <TextInput style={styles.direccionInput} placeholder="Dirección"
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
@@ -70,6 +73,7 @@ class pantallaPedirTurno extends React.Component {
 <DatePicker
       date={this.state.date}
       onDateChange={date => this.setState({ date })}
+      mode={"date"}
     />
 
 <Text></Text>
@@ -77,7 +81,7 @@ class pantallaPedirTurno extends React.Component {
 <Text></Text>
 
 <DatePicker
-      date={this.state.date}
+      date={this.state.hour}
       onDateChange={hour => this.setState({ hour })}
       mode={"time"}
     />
