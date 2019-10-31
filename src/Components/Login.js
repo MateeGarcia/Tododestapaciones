@@ -76,12 +76,20 @@ class Login extends React.Component {
 Tododestapaciones
 </Text>
 
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
 
 <TextInput style={styles.usuarioInput} secureTextEntry={false} placeholder="DNI" 
           onChange={(event) => this.setState({dniEscrita: event.nativeEvent.text})}
           />
 <Image style={styles.imagestyle} 
     source={require('../img/inputLineaNaranja.png')} />
+    <Text></Text>
 
            
 
@@ -104,6 +112,13 @@ onPress={this.botonLogearse}
     <Image style={styles.imagestyle} 
     source={require('../img/ingresar.png')} />
     </TouchableHighlight>
+
+
+
+
+
+    <Text></Text>
+    <Text></Text>
 
 
 
@@ -142,7 +157,6 @@ const styles = StyleSheet.create({
   viewTodo: {
     backgroundColor: "white",
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
   },
 
@@ -157,7 +171,6 @@ const styles = StyleSheet.create({
 
   botonLoginCompletado: {
     alignItems: "center",
-    justifyContent: "center",
     marginTop: 10,
     marginBottom: 10,
     marginHorizontal: 110,

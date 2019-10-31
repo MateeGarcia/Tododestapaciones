@@ -48,17 +48,6 @@ class pantallaPedirTurno extends React.Component {
     render(){
             return(
                 <View style={styles.viewPedidos}>
-
-              <Text>
-              {this.state.date}
-              </Text>
-              <Text>
-              {this.state.hour}
-              </Text>
-              <Text>
-                {this.state.tipoDeDestapacion}
-              </Text>
-
         <TextInput style={styles.direccionInput} placeholder="Dirección"
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
@@ -85,6 +74,10 @@ class pantallaPedirTurno extends React.Component {
       onDateChange={hour => this.setState({ hour })}
       mode={"time"}
     />
+
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
 <Picker
   selectedValue={this.state.tipoDeDestapacion}
