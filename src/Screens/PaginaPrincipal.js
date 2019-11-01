@@ -10,11 +10,11 @@ class PaginaPrincipal extends React.Component {
 
   static navigationOptions = {
 
-    tittle: "Pagina principal",
+    title: "Pagina Principal",
 
     headerStyle: {
       backgroundColor: "orange",
-    }
+    },
   };
 
     render(){
@@ -36,7 +36,7 @@ class PaginaPrincipal extends React.Component {
       </Text>
     </TouchableHighlight>
 
-    <TouchableHighlight style={styles.botonLogin3} onPress={() => {this.props.navigation.navigate('Login')}}>
+    <TouchableHighlight style={styles.botonLogin3} onPress={() => {this.props.navigation.navigate('miCuenta')}}>
       <Text>
        Mi cuenta
       </Text>

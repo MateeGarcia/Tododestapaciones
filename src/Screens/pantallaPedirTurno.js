@@ -4,14 +4,14 @@ import DatePicker from 'react-native-datepicker';
 
 class pantallaPedirTurno extends React.Component {
     
-    static navigationOptions = {
+  static navigationOptions = {
 
-        tittle: "Pedido de turnos",
-    
-        headerStyle: {
-          backgroundColor: "orange",
-        }
-      };
+    title: "Pedido de turnos",
+
+    headerStyle: {
+      backgroundColor: "orange",
+    }
+  };
 
       constructor(props) {
         super(props);

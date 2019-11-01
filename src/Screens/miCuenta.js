@@ -46,13 +46,40 @@ class miCuenta extends React.Component {
           })
 
         return(
-          <View>
+          <View style={styles.view1}>
+            <Text>
+              Nombre: {this.state.nombre}
+            </Text>
+            <Text>
+              Apellido: {this.state.apellido}
+            </Text>
+            <Text>
+              Contraseña: {this.state.contraseña}
+            </Text>
+            <Text>
+              Mail: {this.state.mail}
+            </Text>
+            <Text>
+              Direccion: {this.state.direccion}
+            </Text>
+            <Text>
+              Celular: {this.state.celular}
+            </Text>
+            <Text>
+              DNI: {this.state.dni}
+            </Text>
           </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+  view1: {
+    justifyContent: "space-around",
+    alignItems: "center",
+    alignContent: "center",
+    flex: 1,
+  }
 })
 
 module.exports = miCuenta;

@@ -47,13 +47,13 @@ class Login extends React.Component {
 
         })
       })
-        .then((response) => {global.userid = response.id})
+        /* .then((response) => {global.userid = response.id}) */
         
         .then((response) => {response.json(); respuesta = response;})
         .then((responseJson) => {
           console.log(respuesta);
           if (respuesta.ok) {
-
+        /* global.userid = responseJson.pk; */
             this.props.navigation.navigate('PaginaPrincipal');
           }
           else {
