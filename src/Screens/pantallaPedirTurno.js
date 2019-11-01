@@ -19,10 +19,8 @@ class pantallaPedirTurno extends React.Component {
           tipoDeDestapacion: "",
           direccionEscrito: "",
           date: "",
-          direccionEscrito: "",
           fechaEscrito: "",
           horaEscrito: "",
-          tipoDeDestapacion: "",
           date: "",
           hour: "",
         }
@@ -36,10 +34,20 @@ class pantallaPedirTurno extends React.Component {
               accept: "application/json", "content-type": "application/json",
             },
             body: JSON.stringify({
+              id_usuario: 1,
+              direccion_id: 1,
+              fechaturno: fechaEscrito,
+              id_camionetaturno: 1,
+              id_trabajadorturno: 1,
+              rating: 1,
+              detalle_pedido: "asd",
+              opciones_de_pedido: tipoDeDestapacion
+              /*
               direccion: (this.state.direccionEscrito),
               fecha: (this.state.fechaEscrito),
               hora: (this.state.horaEscrito),
               tipo: (this.state.tipoDeDestapacion),
+              */
             })
           });
         }   

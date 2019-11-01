@@ -19,6 +19,7 @@ class verPedidos extends React.Component {
       fecha: "",
       tipoDeTurno: "",
       direccion: "",
+      dni: "",
     }
   }
 
@@ -26,16 +27,22 @@ class verPedidos extends React.Component {
   
     render(){
 
-      fetch ("$global.userid.pk", {
+      fetch ("http://10.8.17.18:8000/api/Turnos/?id_usuario=" + "1", {
         method: "GET",
         headers: {
           accept: "application/json", "content-type": "application/json",
         },
         body: JSON.stringify({
+          id_usuario: (this.state.dni),
+          direccion_id: (this.state.direccionId)
+
+
+          /*
              hora: (this.state.hora),
              fecha: (this.state.fecha), 
              tipoDeTurno: (this.state.tipoDeTurno),
              direccion: (this.state.direccion),
+             */
         })
       })
 
@@ -59,6 +66,16 @@ class verPedidos extends React.Component {
         );
     }
 }
+
+
+
+/*
+$global.userid.pk
+*/
+
+
+
+
 
 const styles = StyleSheet.create({
 
