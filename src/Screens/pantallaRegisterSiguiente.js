@@ -130,7 +130,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white"
-  }
+  },
+
+  dniInput: {
+    width: 200,
+  },
+
+  mailadmInput: {
+    width: 200,
+  },
+
+  celularInput: {
+    width: 200,
+  },
 })
 
 

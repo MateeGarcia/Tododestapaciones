@@ -145,6 +145,14 @@ module.exports = Login;
 
 const styles = StyleSheet.create({
 
+  usuarioInput: {
+    width: 200,
+  },
+
+  contraseñaInput: {
+    width: 200,
+  },
+
   dniInput: {
     padding: 5,
     marginHorizontal: 30,

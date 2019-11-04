@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     borderColor: "#000000",
     borderWidth: 0.5,
     paddingBottom: 5,
+    width: 200,
   },
 
   siguiente: {
@@ -120,5 +121,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+
+  nombreInput: {
+    width: 200,
+  },
+
+  apellidoInput: {
+    width: 200,
+  },
+
+  contraseñaInput: {
+    width: 200,
+  },
+  
+  mailInput: {
+    width: 200,
+  },
+
 })
 

@@ -124,6 +124,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         
     },
+
+    direccionInput: {
+      width: 200,
+    },
 })
 
 
