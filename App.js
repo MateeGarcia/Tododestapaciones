@@ -8,6 +8,7 @@ import pantallaRegisterSiguiente from "./src/Screens/pantallaRegisterSiguiente"
 import pantallaPedirTurno from "./src/Screens/pantallaPedirTurno"
 import verPedidos from "./src/Screens/verPedidos"
 import miCuenta from "./src/Screens/miCuenta"
+import OrnitorrincoScreen from "./src/Screens/OrnitorrincoScreen"
 
 const RootStack = createStackNavigator(
   {
@@ -18,10 +19,11 @@ const RootStack = createStackNavigator(
     pantallaPedirTurno: pantallaPedirTurno,
     verPedidos: verPedidos,
     miCuenta: miCuenta,
+    OrnitorrincoScreen: OrnitorrincoScreen,
   },
 
   {
-    initialRouteName: "Login",
+    initialRouteName: "PaginaPrincipal",
   }
 );
 

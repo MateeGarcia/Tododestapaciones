@@ -18,7 +18,6 @@ class pantallaPedirTurno extends React.Component {
         this.state = {
           tipoDeDestapacion: "",
           direccionEscrito: "",
-          date: "",
           fechaEscrito: "",
           horaEscrito: "",
           date: "",
@@ -26,8 +25,7 @@ class pantallaPedirTurno extends React.Component {
         }
       }
 
-      botonPedirTurno = () => {
-        botonRegistrarse = () => {
+        botonPedirTurno = () => {
           fetch ("http://10.8.17.18:8000/api/users/", {
             method: "POST",
             headers: {
@@ -36,12 +34,13 @@ class pantallaPedirTurno extends React.Component {
             body: JSON.stringify({
               id_usuario: 1,
               direccion_id: 1,
-              fechaturno: fechaEscrito,
+              fechaturno: (this.state.date),
+              horaturno: (this.state.hour),
               id_camionetaturno: 1,
               id_trabajadorturno: 1,
               rating: 1,
               detalle_pedido: "asd",
-              opciones_de_pedido: tipoDeDestapacion
+              opciones_de_pedido: (this.state.tipoDeDestapacion),
               /*
               direccion: (this.state.direccionEscrito),
               fecha: (this.state.fechaEscrito),
@@ -51,7 +50,6 @@ class pantallaPedirTurno extends React.Component {
             })
           });
         }   
-      }
 
     render(){
             return(
