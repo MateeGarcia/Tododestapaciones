@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Navigator, TouchableHighlight} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Rating, AirbnbRating } from 'react-native-ratings';
 
 class miCuenta extends React.Component {
 
@@ -22,11 +24,14 @@ class miCuenta extends React.Component {
         direccion: "",
         celular: "",
         dni: "",
+        estrellasEscrita: "",
     }
   }
 
+  cambiarScreen = () => {
+    this.props.navigation.navigate('estrellas');
+  }
 
-  
     render(){
 
         fetch ("$global.userid.pk", {
@@ -54,9 +59,6 @@ class miCuenta extends React.Component {
               Apellido: {this.state.apellido}
             </Text>
             <Text>
-              Contraseña: {this.state.contraseña}
-            </Text>
-            <Text>
               Mail: {this.state.mail}
             </Text>
             <Text>
@@ -68,6 +70,11 @@ class miCuenta extends React.Component {
             <Text>
               DNI: {this.state.dni}
             </Text>
+            <TouchableOpacity onPress={this.cambiarScreen}>
+              <Text>
+                ¡Califica nuestro servicio!
+              </Text>
+            </TouchableOpacity>
           </View>
         );
     }

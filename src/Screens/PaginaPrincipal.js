@@ -19,7 +19,7 @@ class PaginaPrincipal extends React.Component {
 
   botonCerrarSesion = () => {
     global.userid= ""
-    this.props.navigation.navigate('Login');
+    this.props.navigation.navigate('miCuenta');
 
     fetch ("http://10.8.17.18:8000/api/users/", {
       method: "POST",
