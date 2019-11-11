@@ -24,7 +24,7 @@ class appAdmin extends React.Component {
     render(){
         return(
           <View style={styles.viewPrincipal}>
-
+            
           </View>
         );
     }
