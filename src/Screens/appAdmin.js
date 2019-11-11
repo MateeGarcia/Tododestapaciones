@@ -23,7 +23,7 @@ class appAdmin extends React.Component {
   
     render(){
         return(
-          <View>
+          <View style={styles.viewPrincipal}>
 
           </View>
         );
@@ -31,7 +31,10 @@ class appAdmin extends React.Component {
 }
 
 const styles = StyleSheet.create({
-
+  viewPrincipal: {
+    flex: 1,
+    flexDirection: "column",
+  }
 })
 
 module.exports = appAdmin;
