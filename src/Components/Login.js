@@ -49,22 +49,21 @@ class Login extends React.Component {
       })
         /* .then((response) => {global.userid = response.id}) */
         
-        .then((response) => {response.json(); respuesta = response;})
-        .then((responseJson) => {
-          console.log(respuesta);
-          if (respuesta.ok) {
-        /* global.userid = responseJson.pk; */
-            this.props.navigation.navigate('PaginaPrincipal');
-          }
-          else {
-            Alert.alert("Email y/o contraseña incorrecta");
-          }
-        })
-
-
-        .catch((error) => {
+        .then((response) => response.json().then((responseJson)=> {
+          console.log(response);
+          if (response.ok) {
+          global.userid = responseJson.user.pk;
+           this.props.navigation.navigate("PaginaPrincipal");
+         }
+         else {
+           Alert.alert("Datos invalidos");
+         } 
+        })).catch((error) => {
           console.error(error);
         });
+
+
+        
     }
   }
 
@@ -82,6 +81,7 @@ Tododestapaciones
 <Text></Text>
 <Text></Text>
 <Text></Text>
+
 
 
 <TextInput style={styles.usuarioInput} secureTextEntry={false} placeholder="DNI" 

@@ -37,6 +37,9 @@ class PaginaPrincipal extends React.Component {
     render(){
         return(
             <View style={styles.titulo}>
+
+
+
       <Text style={styles.tituloTododestapaciones}>
         Tododestapaciones
       </Text>
@@ -46,7 +49,7 @@ class PaginaPrincipal extends React.Component {
        Hacer un pedido
       </Text>
     </TouchableHighlight>
-
+    
     <TouchableHighlight style={styles.botonLogin2} onPress={() => {this.props.navigation.navigate('verPedidos')}}>
       <Text>
        Ver mi pedido
