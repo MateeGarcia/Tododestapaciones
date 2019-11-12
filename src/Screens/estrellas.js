@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Navigator, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, Navigator, TouchableHighlight, Alert} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Rating, AirbnbRating } from 'react-native-ratings';
 
@@ -28,10 +28,17 @@ class estrellas extends React.Component {
     }
   }
 
-
-
-  botonEstrellas2 = () => {
-    this.props.navigation.navigate('paginaPrincipal');
+  botonEstrellas2 = ( rating ) => {
+    estrellasEscrita = rating;
+    Alert.alert(
+      '',
+      `¿Estas seguro de que deseas seleccionar ${rating} estrellas?`,
+      [
+        {text: 'Cancelar', onPress: () => console.log('Cancelar')},
+        {text: 'Continuar', onPress: () => {this.botonEstrellas()}},
+      ],
+      {cancelable: false},
+    );
   }
 
 
@@ -49,6 +56,7 @@ class estrellas extends React.Component {
         estrellas: (this.state.estrellasEscrita),
       })
     })
+    this.props.navigation.navigate('PaginaPrincipal');
   }
   
     render(){
