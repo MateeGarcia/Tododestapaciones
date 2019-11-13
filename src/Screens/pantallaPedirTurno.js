@@ -34,8 +34,8 @@ class pantallaPedirTurno extends React.Component {
             body: JSON.stringify({
               id_usuario: 1,
               direccion_id: 1,
-              fechaturno: (this.state.date),
-              horaturno: (this.state.hour),
+              fechaturno: (this.state.hour),
+              dia_turno: (this.state.date),
               id_camionetaturno: 1,
               id_trabajadorturno: 1,
               rating: 1,

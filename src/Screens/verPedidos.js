@@ -27,7 +27,7 @@ class verPedidos extends React.Component {
   
     render(){
 
-      fetch ("http://10.8.17.18:8000/api/Turnos/?id_usuario=" + "1", {
+      fetch (`http://10.8.17.18:8000/api/Turnos/?id_usuario=${global.userid}`, {
         method: "GET",
         headers: {
           accept: "application/json", "content-type": "application/json",
