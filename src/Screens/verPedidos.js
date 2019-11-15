@@ -33,8 +33,7 @@ class verPedidos extends React.Component {
           accept: "application/json", "content-type": "application/json",
         },
         body: JSON.stringify({
-          id_usuario: (this.state.dni),
-          direccion_id: (this.state.direccionId)
+
 
 
           /*

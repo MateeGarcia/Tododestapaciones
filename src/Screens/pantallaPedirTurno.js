@@ -26,21 +26,22 @@ class pantallaPedirTurno extends React.Component {
       }
 
         botonPedirTurno = () => {
-          fetch ("http://10.8.17.18:8000/api/users/", {
+          fetch ("http://10.8.17.18:8000/api/Turnos/", {
             method: "POST",
             headers: {
               accept: "application/json", "content-type": "application/json",
             },
             body: JSON.stringify({
-              id_usuario: 1,
-              direccion_id: 1,
-              fechaturno: (this.state.hour),
+              id_usuario: `http://10.8.17.18:8000/api/users/${global.userid}/`,
+              direccion_id: "http://10.8.17.18:8000/api/Direccion/2",
+              fechaturno: "12:00:00",
               dia_turno: (this.state.date),
-              id_camionetaturno: 1,
-              id_trabajadorturno: 1,
-              rating: 1,
+              id_camionetaturno: "http://10.8.17.18:8000/api/Camioneta/1/",
+              id_trabajadorturno: "http://10.8.17.18:8000/api/Trabajador/1/",
+              rating: "http://10.8.17.18:8000/api/Ratings/2/",
               detalle_pedido: "asd",
-              opciones_de_pedido: (this.state.tipoDeDestapacion),
+              opciones_de_pedido: 2,
+              estado_turno: true,
               /*
               direccion: (this.state.direccionEscrito),
               fecha: (this.state.fechaEscrito),
@@ -54,6 +55,12 @@ class pantallaPedirTurno extends React.Component {
     render(){
             return(
                 <View style={styles.viewPedidos}>
+<Text>
+              {this.state.date}
+              </Text>
+              <Text>
+              {this.state.hour}
+              </Text>
         <TextInput style={styles.direccionInput} placeholder="Dirección"
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
@@ -91,9 +98,9 @@ class pantallaPedirTurno extends React.Component {
   onValueChange={(itemValue, itemIndex) =>
     this.setState({tipoDeDestapacion: itemValue})
   }>
-  <Picker.Item label="Destapación" value="destapacion" />
-  <Picker.Item label="Desagote" value="desagote" />
-  <Picker.Item label="Limpieza Hidrojet" value="hidrojet" />
+  <Picker.Item label="Destapación" value="1" />
+  <Picker.Item label="Desagote" value="2" />
+  <Picker.Item label="Limpieza Hidrojet" value="3" />
 
 </Picker>
 
