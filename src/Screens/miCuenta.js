@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Navigator, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, Navigator, TouchableHighlight, Alert} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Rating, AirbnbRating } from 'react-native-ratings';
 
@@ -32,9 +32,59 @@ class miCuenta extends React.Component {
     this.props.navigation.navigate('estrellas');
   }
 
+  botonEstrellas2 = ( rating ) => {
+    estrellasEscrita = rating;
+    Alert.alert(
+      '',
+      `¿Estas seguro de que deseas seleccionar ${rating} estrellas?`,
+      [
+        {text: 'Cancelar', onPress: () => console.log('Cancelar')},
+        {text: 'Continuar', onPress: () => {this.botonEstrellas()}},
+      ],
+      {cancelable: false},
+    );
+  }
+
+  botonCerrarSesion = () => {
+    global.userid= ""
+    
+
+    fetch ("http://10.8.17.18:8000/api/users/", {
+      method: "POST",
+      headers: {
+        accept: "application/json", "content-type": "application/json",
+      },
+      body: JSON.stringify({
+
+        userid: (global.userid),
+        
+      })
+    })
+
+    this.props.navigation.navigate('Login');
+  }
+
+
+
+  botonEstrellas = () => {
+    fetch('http://10.8.17.18:8000/api/auth/login/', {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        estrellas: (this.state.estrellasEscrita),
+      })
+    })
+    this.props.navigation.navigate('PaginaPrincipal');
+  }
+
     render(){
 
-        fetch ("$global.userid.pk", {
+      
+
+        /* fetch ("$global.userid.pk", {
             method: "GET",
             headers: {
               accept: "application/json", "content-type": "application/json",
@@ -48,11 +98,26 @@ class miCuenta extends React.Component {
                  celular: (this.state.celular), 
                  dni: (this.state.dni),
             })
+          }) 
+          
+          `http://10.8.17.18:8000/api/users/${global.userid}/`
+          
+          */
+
+          fetch("https://jsonplaceholder.typicode.com/todos/1")
+          .then ((response) => response.json())
+          .then ((responseJson) => {
+            nombre = responseJson.first_name
+            apellido = responseJson.last_name
+            mail = responseJson.email
+            direccion = responseJson.direccion
+            celular = responseJson.celular
+            dni = responseJson.dni
           })
 
         return(
           <View style={styles.view1}>
-            <Text>
+            <Text> 
               Nombre: {this.state.nombre}
             </Text>
             <Text>
@@ -70,11 +135,21 @@ class miCuenta extends React.Component {
             <Text>
               DNI: {this.state.dni}
             </Text>
-            <TouchableOpacity onPress={this.cambiarScreen}>
-              <Text>
-                ¡Califica nuestro servicio!
-              </Text>
-            </TouchableOpacity>
+
+            <AirbnbRating
+  count={5}
+  reviews={["1", "2", "3", "4", "5"]}
+  defaultRating={5}
+  size={60}
+  onFinishRating={this.botonEstrellas2}
+/>
+
+<TouchableHighlight style={styles.botonLogin3} onPress={this.botonCerrarSesion}>
+      <Text>
+       Cerrar sesión
+      </Text>
+    </TouchableHighlight>
+
           </View>
         );
     }

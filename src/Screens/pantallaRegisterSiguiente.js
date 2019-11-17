@@ -39,6 +39,7 @@ class pantallaRegisterSiguiente extends React.Component {
             last_name: (global.apellidoEscrito),
             password: (global.contraseñaEscrito),
             dni: (this.state.dniEscrito),
+            direccion: (this.state.direccionEscrito),
 
             profile:{
               id_direccion: [1],
@@ -96,6 +97,16 @@ class pantallaRegisterSiguiente extends React.Component {
 
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
+          <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} />
+
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
+<TextInput style={styles.celularInput} placeholder="Direccion" 
+          onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
           <Image style={styles.imagestyle} 
     source={require('../img/inputLineaNaranja.png')} />
 

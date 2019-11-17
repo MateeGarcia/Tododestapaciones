@@ -20,11 +20,21 @@ class appAdmin extends React.Component {
   }
 
 
-  
+
     render(){
+
+
+      fetch("https://jsonplaceholder.typicode.com/posts")
+      .then ((response) => response.json())
+      .then ((data) => {
+                   console.log(data[2].id)
+      })
+
         return(
           <View style={styles.viewPrincipal}>
-            
+            <Text>
+
+            </Text>
           </View>
         );
     }
@@ -38,3 +48,10 @@ const styles = StyleSheet.create({
 })
 
 module.exports = appAdmin;
+
+        /* 
+        array1=[];
+                    for (i = 0; i <= responseJson.length-1;i++){
+                      array1.push(JSON.stringify(responseJson[i]));
+                    } 
+                    */

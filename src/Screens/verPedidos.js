@@ -23,16 +23,20 @@ class verPedidos extends React.Component {
     }
   }
 
-
+  
   
     render(){
 
-      fetch (`http://10.8.17.18:8000/api/Turnos/?id_usuario=${global.userid}`, {
-        method: "GET",
-        headers: {
-          accept: "application/json", "content-type": "application/json",
-        },
-        body: JSON.stringify({
+
+      fetch(`http://10.8.17.18:8000/api/Turnos/?id_usuario=${global.userid}`)
+          .then ((response) => response.json())
+          .then ((responseJson) => {
+            fecha = responseJson.dia_turno
+            hora = responseJson.fechaturno
+            tipoDeTurno = responseJson.opciones_de_pedido
+            direccion = responseJson.direccion_id
+          })
+
 
 
 
@@ -42,8 +46,7 @@ class verPedidos extends React.Component {
              tipoDeTurno: (this.state.tipoDeTurno),
              direccion: (this.state.direccion),
              */
-        })
-      })
+
 
         return(
           <View style={styles.turnoGuardado}>

@@ -18,20 +18,7 @@ class PaginaPrincipal extends React.Component {
   };
 
   botonCerrarSesion = () => {
-    global.userid= ""
     this.props.navigation.navigate('miCuenta');
-
-    fetch ("http://10.8.17.18:8000/api/users/", {
-      method: "POST",
-      headers: {
-        accept: "application/json", "content-type": "application/json",
-      },
-      body: JSON.stringify({
-
-        userid: (global.userid),
-        
-      })
-    })
   }
 
     render(){
@@ -58,7 +45,7 @@ class PaginaPrincipal extends React.Component {
 
     <TouchableHighlight style={styles.botonLogin3} onPress={this.botonCerrarSesion}>
       <Text>
-       Cerrar sesión
+       Opciones
       </Text>
     </TouchableHighlight>
 
