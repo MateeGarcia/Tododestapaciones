@@ -7,7 +7,7 @@ class miCuenta extends React.Component {
 
   static navigationOptions = {
 
-    title: "Mi cuenta",
+    title: "Opciones",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -118,10 +118,7 @@ class miCuenta extends React.Component {
         return(
           <View style={styles.view1}>
             <Text> 
-              Nombre: {this.state.nombre}
-            </Text>
-            <Text>
-              Apellido: {this.state.apellido}
+              Nombre: {this.state.nombre} {this.state.apellido}
             </Text>
             <Text>
               Mail: {this.state.mail}

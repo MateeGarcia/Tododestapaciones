@@ -12,25 +12,32 @@ class appAdmin extends React.Component {
     }
   };
   
-  constructor(props) {
-    super(props);
-    this.state = {
-
+  constructor(){
+    super()
+    this.state ={
+      data:[]
     }
   }
 
+renderArray() {
+  return fetch("https://jsonplaceholder.typicode.com/posts")
+      .then ((response) => response.json())
+      .then ((responseJson) => {  
+        this.setState({data: responseJson});
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+}
 
+componentDidMount() {
+  this.renderArray()
+}
 
     render(){
 
-
-      fetch("https://jsonplaceholder.typicode.com/posts")
-      .then ((response) => response.json())
-      .then ((data) => {
-                   console.log(data[2].id)
-      })
-
         return(
+          console.log(data),
           <View style={styles.viewPrincipal}>
             <Text>
 

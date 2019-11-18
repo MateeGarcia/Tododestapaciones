@@ -27,7 +27,7 @@ const RootStack = createStackNavigator(
   },
 
   {
-    initialRouteName: "appAdmin",
+    initialRouteName: "PaginaPrincipal",
   }
 );
 
