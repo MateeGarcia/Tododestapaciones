@@ -26,7 +26,7 @@ class pantallaRegisterSiguiente extends React.Component {
 
 
       botonRegistrarse = () => {
-        fetch ("http://10.8.17.18:8000/api/users/", {
+        fetch ("http://192.168.0.196:8000/api/users/", {
           method: "POST",
           headers: {
             accept: "application/json", "content-type": "application/json",
@@ -42,10 +42,10 @@ class pantallaRegisterSiguiente extends React.Component {
             direccion: (this.state.direccionEscrito),
 
             profile:{
-              id_direccion: [1],
               photo: null,
               nacimiento: null,
               celular: (this.state.celularEscrito),
+              rating_mateo: 1,
             },
           })
         })

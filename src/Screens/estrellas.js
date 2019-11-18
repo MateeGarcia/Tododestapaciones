@@ -46,7 +46,7 @@ class estrellas extends React.Component {
 
 
   botonEstrellas = () => {
-    fetch('http://10.8.17.18:8000/api/auth/login/', {
+    fetch('http://192.168.0.196:8000/api/auth/login/', {
       method: 'POST',
       headers: {
         accept: 'application/json',

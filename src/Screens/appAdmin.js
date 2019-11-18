@@ -20,7 +20,7 @@ class appAdmin extends React.Component {
   }
 
 renderArray() {
-  return fetch("https://jsonplaceholder.typicode.com/posts")
+  return fetch("http://192.168.0.196:8000/api/Turnos")
       .then ((response) => response.json())
       .then ((responseJson) => {  
         this.setState({data: responseJson});

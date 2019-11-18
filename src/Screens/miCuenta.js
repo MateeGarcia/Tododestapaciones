@@ -33,6 +33,7 @@ class miCuenta extends React.Component {
   }
 
   botonEstrellas2 = ( rating ) => {
+    console.log({rating})
     estrellasEscrita = rating;
     Alert.alert(
       '',
@@ -49,7 +50,7 @@ class miCuenta extends React.Component {
     global.userid= ""
     
 
-    fetch ("http://10.8.17.18:8000/api/users/", {
+    fetch ("http://192.168.0.196:8000/api/users/", {
       method: "POST",
       headers: {
         accept: "application/json", "content-type": "application/json",
@@ -67,42 +68,23 @@ class miCuenta extends React.Component {
 
 
   botonEstrellas = () => {
-    fetch('http://10.8.17.18:8000/api/auth/login/', {
+    fetch('http://192.168.0.196:8000/api/Ratings/', {
       method: 'POST',
       headers: {
         accept: 'application/json',
         'Content-type': 'application/json',
       },
       body: JSON.stringify({
-        estrellas: (this.state.estrellasEscrita),
+        Rating_general: "3",               /*(this.state.estrellasEscrita),*/
+        trabajador1: "http://192.168.0.196:8000/api/Trabajador/1/",
+        Cant_Rating: "3",
+        Rating_numers: "3",
       })
     })
     this.props.navigation.navigate('PaginaPrincipal');
   }
 
     render(){
-
-      
-
-        /* fetch ("$global.userid.pk", {
-            method: "GET",
-            headers: {
-              accept: "application/json", "content-type": "application/json",
-            },
-            body: JSON.stringify({
-                 nombre: (this.state.nombre),
-                 apellido: (this.state.apellido),
-                 contraseña: (this.state.contraseña),
-                 mail: (this.state.mail),
-                 direccion: (this.state.direccion),
-                 celular: (this.state.celular), 
-                 dni: (this.state.dni),
-            })
-          }) 
-          
-          `http://10.8.17.18:8000/api/users/${global.userid}/`
-          
-          */
 
           fetch("https://jsonplaceholder.typicode.com/todos/1")
           .then ((response) => response.json())
@@ -119,6 +101,9 @@ class miCuenta extends React.Component {
           <View style={styles.view1}>
             <Text> 
               Nombre: {this.state.nombre} {this.state.apellido}
+            </Text>
+            <Text>
+              {this.state.estrellasEscrita}
             </Text>
             <Text>
               Mail: {this.state.mail}
