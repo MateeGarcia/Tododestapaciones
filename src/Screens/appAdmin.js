@@ -14,22 +14,25 @@ class appAdmin extends React.Component {
   
   constructor(props){
     super(props)
+    global.array = [];
     this.state ={
       data: [],
     }
   }
 
 renderArray() {
-  return fetch("http://10.8.17.18:8000/api/Turnos")
+      fetch("http://10.8.17.18:8000/api/Turnos")
       .then ((response) => response.json())
       .then ((responseJson) => {
-        console.log(responseJson)
-        for (i = 0; responseJson.length <= i; i++){
-          data.push()
-        }
+
+         for (i = 0; i <= responseJson.length; i++){
+          global.array.push(responseJson[i])
+        } 
+        console.log(global.array)
+
         /* const lista = this.state.data.concat(responseJson);
         this.setState({data: lista}); */
-
+ 
       })
       .catch((error) => {
       });
@@ -37,15 +40,16 @@ renderArray() {
 
 componentDidMount() {
   this.renderArray()
+
 }
 
     render(){
 
         return( 
-          /* console.log(this.state.data), */
+
           <View style={styles.viewPrincipal}>
             <Text>
-
+              {global.array}
             </Text>
           </View>
         );
