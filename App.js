@@ -6,6 +6,7 @@ import PaginaPrincipal from "./src/Screens/PaginaPrincipal"
 import pantallaRegister from "./src/Screens/pantallaRegister"
 import pantallaRegisterSiguiente from "./src/Screens/pantallaRegisterSiguiente"
 import pantallaPedirTurno from "./src/Screens/pantallaPedirTurno"
+import pantallaPedirUrgencia from "./src/Screens/pantallaPedirUrgencia"
 import verPedidos from "./src/Screens/verPedidos"
 import miCuenta from "./src/Screens/miCuenta"
 import OrnitorrincoScreen from "./src/Screens/OrnitorrincoScreen"
@@ -24,6 +25,7 @@ const RootStack = createStackNavigator(
     OrnitorrincoScreen: OrnitorrincoScreen,
     estrellas: estrellas,
     appAdmin: appAdmin,
+    pantallaPedirUrgencia: pantallaPedirUrgencia,
   },
 
   {

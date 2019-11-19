@@ -33,8 +33,8 @@ class miCuenta extends React.Component {
   }
 
   botonEstrellas2 = ( rating ) => {
-    console.log({rating})
-    estrellasEscrita = rating;
+    estrellasEscrita = `${rating}`;
+    console.log(estrellasEscrita)
     Alert.alert(
       '',
       `¿Estas seguro de que deseas seleccionar ${rating} estrellas?`,
@@ -75,7 +75,7 @@ class miCuenta extends React.Component {
         'Content-type': 'application/json',
       },
       body: JSON.stringify({
-        Rating_general: "3",               /*(this.state.estrellasEscrita),*/
+        Rating_general: `${estrellasEscrita}`,
         trabajador1: "http://192.168.0.196:8000/api/Trabajador/1/",
         Cant_Rating: "3",
         Rating_numers: "3",
@@ -101,9 +101,6 @@ class miCuenta extends React.Component {
           <View style={styles.view1}>
             <Text> 
               Nombre: {this.state.nombre} {this.state.apellido}
-            </Text>
-            <Text>
-              {this.state.estrellasEscrita}
             </Text>
             <Text>
               Mail: {this.state.mail}

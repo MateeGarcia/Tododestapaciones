@@ -15,11 +15,13 @@
     "react-native-24h-timepicker": "^1.0.0",
     "react-native-date-picker": "^2.7.0",
     "react-native-datepicker": "^1.7.2",
+    "react-native-flip-toggle-button": "^1.0.6",
     "react-native-ratings": "^6.5.0",
     "react-native-ui-xg": "0.0.6",
     "react-native-vector-icons": "^6.5.0",
     "react-native-web": "^0.11.4",
-    "react-navigation": "^3.11.0"
+    "react-navigation": "^3.11.0",
+    "toggle-switch-react-native": "^2.1.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.1.1"

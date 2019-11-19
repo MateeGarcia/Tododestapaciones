@@ -33,7 +33,13 @@ class PaginaPrincipal extends React.Component {
 
       <TouchableHighlight style={styles.botonLogin} onPress={() => {this.props.navigation.navigate('pantallaPedirTurno')}}>
       <Text>
-       Hacer un pedido
+       Solicitar un pedido
+      </Text>
+    </TouchableHighlight>
+
+    <TouchableHighlight style={styles.botonLogin} onPress={() => {this.props.navigation.navigate('pantallaPedirUrgencia')}}>
+      <Text>
+       Solicitar una urgencia
       </Text>
     </TouchableHighlight>
     
@@ -48,42 +54,6 @@ class PaginaPrincipal extends React.Component {
        Opciones
       </Text>
     </TouchableHighlight>
-
-    <Text>
-      
-    </Text>
-
-    <Text>
-      
-      </Text>
-
-      <Text>
-      
-      </Text>
-
-      <Text>
-      
-      </Text>
-
-      <Text>
-      
-      </Text>
-
-      <Text>
-      
-      </Text>
-
-      <Text>
-      
-      </Text>
-
-      <Text>
-      
-      </Text>
-
-      <Text>
-      
-      </Text>
 
     </View> 
         );

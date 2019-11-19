@@ -2,11 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker, Image, DatePickerAndroid, DatePickerIOS} from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
-class pantallaPedirTurno extends React.Component {
+class pantallaPedirUrgencia extends React.Component {
     
   static navigationOptions = {
 
-    title: "Pedido de turnos",
+    title: "Pedido de urgencia",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -59,34 +59,27 @@ class pantallaPedirTurno extends React.Component {
             return(
                 <View style={styles.viewPedidos}>
 
-        <TextInput style={styles.direccionInput} placeholder="Dirección"
+<Text></Text>
+<Text></Text>
+<Text style={styles.valorAgregado}>
+Las urgencias tienen un valor agregado del 50%
+</Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<TextInput style={styles.direccionInput} placeholder="Dirección"
         onChange={(event) => this.setState({direccionEscrito: event.nativeEvent.text})}/>
 
         <Image style={styles.imagestyle} 
     source={require('../img/inputLineaNaranja.png')} />
-
+    <Text></Text>
 <Text></Text>
 <Text></Text>
 <Text></Text>
-<Text></Text>
-
-<View style={styles.picker}> 
-<DatePicker
-      date={this.state.date}
-      onDateChange={date => this.setState({ date })}
-      mode={"date"}
-    />
-
-<Text></Text>
-<Text></Text>
-<Text></Text>
-
-<DatePicker
-      date={this.state.hour}
-      onDateChange={hour => this.setState({ hour })}
-      mode={"time"}
-    />
-</View>
 <Text></Text>
 <Text></Text>
 <Text> Seleccione que servicio requiere</Text>
@@ -103,6 +96,8 @@ class pantallaPedirTurno extends React.Component {
   <Picker.Item label="Limpieza Hidrojet" value="3" />
 
 </Picker>
+<Text></Text>
+
 
         <Text></Text>
 <Text></Text>
@@ -126,7 +121,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         backgroundColor: "white",
-        justifyContent: "center",
         
     },
 
@@ -136,10 +130,14 @@ const styles = StyleSheet.create({
     
     picker: {
       
-    }
+    },
+
+    valorAgregado: {
+        color: "red",
+    },
 })
 
 
 
 
-module.exports = pantallaPedirTurno;
+module.exports = pantallaPedirUrgencia;
