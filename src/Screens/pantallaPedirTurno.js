@@ -27,24 +27,24 @@ class pantallaPedirTurno extends React.Component {
       }
 
         botonPedirTurno = () => {
-          fetch ("http://192.168.0.196:8000/api/Turnos/", {
+          fetch ("http://10.8.17.18:8000/api/Turnos/", {
             method: "POST",
             headers: {
               accept: "application/json", "content-type": "application/json",
             },
             body: JSON.stringify({
-              id_usuario: `http://192.168.0.196:8000/api/users/${global.userid}/`,
-              direccion_id: "http://192.168.0.196:8000/api/Direccion/1/",
+              id_usuario: `http://10.8.17.18:8000/api/users/${global.userid}/`,
+              direccion_id: "http://10.8.17.18:8000/api/Direccion/1/",
               direccion_mateo: (this.state.direccionEscrito),
               fechaturno: (this.state.hour),
               dia_turno: (this.state.date),
-              id_camionetaturno: "http://192.168.0.196:8000/api/Camioneta/1/",
-              id_trabajadorturno: "http://192.168.0.196:8000/api/Trabajador/1/",
-              rating: "http://192.168.0.196:8000/api/Ratings/1/",
+              id_camionetaturno: "http://10.8.17.18:8000/api/Camioneta/1/",
+              id_trabajadorturno: "http://10.8.17.18:8000/api/Trabajador/1/",
+              rating: "http://10.8.17.18:8000/api/Ratings/1/",
               detalle_pedido: "asd",
               opciones_de_pedido: (this.state.tipoDeDestapacion),
               estado_turno: "true",
-              turno_o_urgencia: (this.state.turno_o_urgencia),
+              turno_o_urgencia: "1",
               /*
               direccion: (this.state.direccionEscrito),
               fecha: (this.state.fechaEscrito),

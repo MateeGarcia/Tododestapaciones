@@ -28,7 +28,7 @@ class verPedidos extends React.Component {
     render(){
 
 
-      fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
+      fetch(`http://10.8.17.18:8000/api/Turnos/?id_usuario=${global.userid}`)
           .then ((response) => response.json())
           .then ((responseJson) => {
             fecha = responseJson.dia_turno

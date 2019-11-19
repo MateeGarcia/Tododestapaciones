@@ -12,21 +12,26 @@ class appAdmin extends React.Component {
     }
   };
   
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state ={
-      data:[]
+      data: [],
     }
   }
 
 renderArray() {
-  return fetch("http://192.168.0.196:8000/api/Turnos")
+  return fetch("http://10.8.17.18:8000/api/Turnos")
       .then ((response) => response.json())
-      .then ((responseJson) => {  
-        this.setState({data: responseJson});
+      .then ((responseJson) => {
+        console.log(responseJson)
+        for (i = 0; responseJson.length <= i; i++){
+          data.push()
+        }
+        /* const lista = this.state.data.concat(responseJson);
+        this.setState({data: lista}); */
+
       })
       .catch((error) => {
-        console.error(error);
       });
 }
 
@@ -36,8 +41,8 @@ componentDidMount() {
 
     render(){
 
-        return(
-          console.log(data),
+        return( 
+          /* console.log(this.state.data), */
           <View style={styles.viewPrincipal}>
             <Text>
 
