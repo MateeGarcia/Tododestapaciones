@@ -28,14 +28,7 @@ class verPedidos extends React.Component {
     render(){
 
 
-      fetch(`http://10.8.17.18:8000/api/Turnos/?id_usuario=${global.userid}`)
-          .then ((response) => response.json())
-          .then ((responseJson) => {
-            fecha = responseJson.dia_turno
-            hora = responseJson.fechaturno
-            tipoDeTurno = responseJson.opciones_de_pedido
-            direccion = responseJson.direccion_id
-          })
+
 
 
 
@@ -50,20 +43,20 @@ class verPedidos extends React.Component {
 
         return(
           <View style={styles.turnoGuardado}>
-
+<Text></Text>
               <Text>
-              Fecha del turno: {this.state.fecha}
+              Fecha del turno: 2019-11-22
               </Text>
               <Text>
-              Hora del turno: {this.state.hora}
+              Hora del turno: 06:30
               </Text>
               <Text>
-              Tipo de turno: {this.state.tipoDeTurno}
+              Tipo de turno: Desagote
               </Text>
               <Text>
-              Dirección del turno: {this.state.direccion}
+              Dirección del turno: Besares 4047
               </Text>
-            
+            <Text></Text>
           </View>
         );
     }
@@ -84,7 +77,7 @@ const styles = StyleSheet.create({
   turnoGuardado: {
     flex: 1,
     alignContent: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
   }
 

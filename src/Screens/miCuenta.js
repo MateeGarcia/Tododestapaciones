@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Navigator, TouchableHighlight, Alert} from 'react-native';
+import { StyleSheet, Text, View, Navigator, TouchableHighlight, Alert, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Rating, AirbnbRating } from 'react-native-ratings';
 
@@ -17,13 +17,13 @@ class miCuenta extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        nombre: "",
-        apellido: "",
+        /* nombre: "",
+        apellido: "",*/
         contraseña: "",
-        mail: "",
+        /* mail: "",*/
         direccion: "",
-        celular: "",
-        dni: "",
+        /* celular: "",
+        dni: "", */
         estrellasEscrita: "",
     }
   }
@@ -68,7 +68,7 @@ class miCuenta extends React.Component {
 
 
   botonEstrellas = () => {
-    fetch('http://10.8.17.18:8000/api/Ratings/', {
+    fetch('http://192.168.0.196:8000/api/Ratings/', {
       method: 'POST',
       headers: {
         accept: 'application/json',
@@ -76,7 +76,7 @@ class miCuenta extends React.Component {
       },
       body: JSON.stringify({
         Rating_general: `${estrellasEscrita}`,
-        trabajador1: "http://10.8.17.18:8000/api/Trabajador/1/",
+        trabajador1: "http://192.168.0.196:8000/api/Trabajador/1/",
         Cant_Rating: "3",
         Rating_numers: "3",
       })
@@ -84,35 +84,30 @@ class miCuenta extends React.Component {
     this.props.navigation.navigate('PaginaPrincipal');
   }
 
+
+
+
+
     render(){
 
-          fetch("http://10.8.17.18:8000/api/users/")
-          .then ((response) => response.json())
-          .then ((responseJson) => {
-            nombre = responseJson.first_name
-            apellido = responseJson.last_name
-            mail = responseJson.email
-            direccion = responseJson.direccion
-            celular = responseJson.celular
-            dni = responseJson.dni
-          })
+          
 
         return(
+
+
+
           <View style={styles.view1}>
             <Text> 
-              Nombre: {this.state.nombre} {this.state.apellido}
+              Nombre: {global.nombre} {global.apellido}
             </Text>
             <Text>
-              Mail: {this.state.mail}
+              Mail: {global.mail}
             </Text>
             <Text>
-              Direccion: {this.state.direccion}
+              Celular: {global.celular}
             </Text>
             <Text>
-              Celular: {this.state.celular}
-            </Text>
-            <Text>
-              DNI: {this.state.dni}
+              DNI: {global.dni}
             </Text>
 
             <AirbnbRating
@@ -124,9 +119,9 @@ class miCuenta extends React.Component {
 />
 
 <TouchableHighlight style={styles.botonLogin3} onPress={this.botonCerrarSesion}>
-      <Text>
-       Cerrar sesión
-      </Text>
+
+<Image style={styles.imagestyle} 
+    source={require('../img/LOGOUT.png')} />
     </TouchableHighlight>
 
           </View>

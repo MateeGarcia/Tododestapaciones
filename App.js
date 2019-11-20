@@ -12,6 +12,7 @@ import miCuenta from "./src/Screens/miCuenta"
 import OrnitorrincoScreen from "./src/Screens/OrnitorrincoScreen"
 import estrellas from "./src/Screens/estrellas"
 import appAdmin from "./src/Screens/appAdmin"
+import appAdmin2 from "./src/Screens/appAdmin2"
 
 const RootStack = createStackNavigator(
   {
@@ -25,11 +26,12 @@ const RootStack = createStackNavigator(
     OrnitorrincoScreen: OrnitorrincoScreen,
     estrellas: estrellas,
     appAdmin: appAdmin,
+    appAdmin2: appAdmin2,
     pantallaPedirUrgencia: pantallaPedirUrgencia,
   },
 
   {
-    initialRouteName: "appAdmin",
+    initialRouteName: "Login",
   }
 );
 

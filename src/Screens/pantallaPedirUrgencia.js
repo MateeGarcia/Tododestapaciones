@@ -27,7 +27,7 @@ class pantallaPedirUrgencia extends React.Component {
       }
 
         botonPedirTurno = () => {
-          fetch ("http://10.8.17.18:8000/api/Turnos/", {
+          fetch ("http://192.168.0.196:8000/api/Turnos/", {
             method: "POST",
             headers: {
               accept: "application/json", "content-type": "application/json",
@@ -53,6 +53,7 @@ class pantallaPedirUrgencia extends React.Component {
               */
             })
           });
+          this.props.navigation.navigate('PaginaPrincipal');
         }   
 
     render(){
@@ -90,7 +91,6 @@ Las urgencias tienen un valor agregado del 50%
   onValueChange={(itemValue, itemIndex) =>
     this.setState({tipoDeDestapacion: itemValue})
   }>
-  <Picker.Item label="" value="0" />
   <Picker.Item label="Destapación" value="1"/>
   <Picker.Item label="Desagote" value="2" />
   <Picker.Item label="Limpieza Hidrojet" value="3" />
@@ -105,9 +105,8 @@ Las urgencias tienen un valor agregado del 50%
 <Text></Text>
 
         <TouchableOpacity style={styles.botonPedirTurno} onPress={this.botonPedirTurno}>
-          <Text>
-          Solicitar turno
-          </Text>
+        <Image style={styles.imagestyle} 
+    source={require('../img/solicitarUrgencia.png')} />
         </TouchableOpacity>
 
         </View>

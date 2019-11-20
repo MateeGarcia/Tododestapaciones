@@ -34,7 +34,7 @@ class Login extends React.Component {
     if (this.state.dniEscrita.length < 1 || this.state.contraseñaEscrita.length <= 1) {
       Alert.alert("Credenciales Invalidas"); 
     } else {
-      fetch('http://10.8.17.18:8000/api/auth/login/', {
+      fetch('http://192.168.0.196:8000/api/auth/login/', {
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -58,6 +58,11 @@ class Login extends React.Component {
          else {
            Alert.alert("Datos invalidos");
          } 
+
+         if (global.userid == "18") {
+          this.props.navigation.navigate("appAdmin");
+        }
+        console.log(global.userid)
         })).catch((error) => {
           console.error(error);
         });
@@ -72,10 +77,10 @@ class Login extends React.Component {
     return (
       <View style={styles.viewTodo}>
 <Text style={styles.tituloTododestapacionesMenu}>
-Tododestapaciones
 </Text>
+<Image style={styles.logaso} 
+    source={require('../img/Logodestapaciones.png')} />
 
-<Text></Text>
 <Text></Text>
 <Text></Text>
 <Text></Text>
@@ -100,7 +105,9 @@ Tododestapaciones
     source={require('../img/inputLineaNaranja.png')} />
 
 
-          
+          <Text>
+
+          </Text>
       
           
 
@@ -116,9 +123,8 @@ onPress={this.botonLogearse}
 
 
 
+    <Text></Text>
 
-    <Text></Text>
-    <Text></Text>
 
 
 
@@ -188,6 +194,12 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     flex: 2,
   },
+
+  logaso: {
+    height: 40,
+    width: 220
+    
+  }
     
   
 });

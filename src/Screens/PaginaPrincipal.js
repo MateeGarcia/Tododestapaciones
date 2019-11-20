@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, TouchableHighlight, Image} from 'react-native';
 
 import Boton from "../Components/Boton"
 
@@ -17,6 +17,34 @@ class PaginaPrincipal extends React.Component {
     },
   };
 
+  componentWillMount() {
+    fetch(`http://192.168.0.196:8000/api/users/${global.userid}/`)
+          .then ((response) => response.json())
+          .then ((responseJson) => {
+
+            global.nombre = responseJson.first_name
+            global.apellido = responseJson.last_name
+            global.mail = responseJson.email
+            global.celular = responseJson.profile.celular
+            global.dni = responseJson.dni
+
+          })
+
+          fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
+          .then ((response) => response.json())
+          .then ((responseJson) => {
+
+            console.log(responseJson.Array.Object.dia_turno)
+            console.log(responseJson.Object.fechaturno)
+            console.log(responseJson.Object.opciones_de_pedido)
+            console.log(responseJson.Object.direccion_id)
+            global.fecha = responseJson.dia_turno
+            global.hora = responseJson.fechaturno
+            global.tipoDeTurno = responseJson.opciones_de_pedido
+            global.direccion = responseJson.direccion_id
+          })
+  }
+
   botonCerrarSesion = () => {
     this.props.navigation.navigate('miCuenta');
   }
@@ -24,35 +52,60 @@ class PaginaPrincipal extends React.Component {
     render(){
         return(
             <View style={styles.titulo}>
+<Text></Text>
+      <Image style={styles.logaso} 
+    source={require('../img/Logodestapaciones.png')} />
+
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
 
-
-      <Text style={styles.tituloTododestapaciones}>
-        Tododestapaciones
-      </Text>
-
-      <TouchableHighlight style={styles.botonLogin} onPress={() => {this.props.navigation.navigate('pantallaPedirTurno')}}>
-      <Text>
-       Solicitar un pedido
-      </Text>
+    <TouchableHighlight style={styles.botonLoginCompletado} 
+hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
+onPress={() => {this.props.navigation.navigate('pantallaPedirTurno')}}
+>
+    <Image style={styles.imagestyle} 
+    source={require('../img/hacerUnPedido.png')} />
     </TouchableHighlight>
 
-    <TouchableHighlight style={styles.botonLogin} onPress={() => {this.props.navigation.navigate('pantallaPedirUrgencia')}}>
-      <Text>
-       Solicitar una urgencia
-      </Text>
-    </TouchableHighlight>
-    
-    <TouchableHighlight style={styles.botonLogin2} onPress={() => {this.props.navigation.navigate('verPedidos')}}>
-      <Text>
-       Ver mi pedido
-      </Text>
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+
+    <TouchableHighlight style={styles.botonLoginCompletado} 
+hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
+onPress={() => {this.props.navigation.navigate('pantallaPedirUrgencia')}}
+>
+    <Image style={styles.imagestyle} 
+    source={require('../img/solicitarUrgencia.png')} />
     </TouchableHighlight>
 
-    <TouchableHighlight style={styles.botonLogin3} onPress={this.botonCerrarSesion}>
-      <Text>
-       Opciones
-      </Text>
+
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+
+    <TouchableHighlight style={styles.botonLoginCompletado} 
+hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
+onPress={() => {this.props.navigation.navigate('verPedidos')}}
+>
+    <Image style={styles.imagestyle} 
+    source={require('../img/verMiPedido.png')} />
+    </TouchableHighlight>
+
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+    <Text></Text>
+
+    <TouchableHighlight style={styles.botonLoginCompletado} 
+hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
+onPress={this.botonCerrarSesion}>
+    <Image style={styles.imagestyle} 
+    source={require('../img/Opciones.png')} />
     </TouchableHighlight>
 
     </View> 
@@ -98,7 +151,7 @@ const styles = StyleSheet.create({
 
     titulo: {
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       backgroundColor: "white",
     },
   
@@ -107,7 +160,26 @@ const styles = StyleSheet.create({
     justifyContent:"center",
     fontSize: 30,
     marginTop: 25,
-    }
+    },
+
+    logaso: {
+      height: 40,
+      width: 220
+      
+    },
+
+    falsoBoton: {
+      borderRadius: 10,
+      backgroundColor: "#Ff732d",
+      fontWeight: "100",
+      fontSize: 30,
+      borderWidth: 1.5,
+      width: 280,
+      justifyContent: "center",
+      alignContent: "center",
+      alignItems: "center",
+    },
+
   });
 
 module.exports = PaginaPrincipal;
