@@ -30,7 +30,7 @@ class PaginaPrincipal extends React.Component {
 
           })
 
-          fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
+          /* fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
           .then ((response) => response.json())
           .then ((responseJson) => {
 
@@ -42,7 +42,7 @@ class PaginaPrincipal extends React.Component {
             global.hora = responseJson.fechaturno
             global.tipoDeTurno = responseJson.opciones_de_pedido
             global.direccion = responseJson.direccion_id
-          })
+          }) */
   }
 
   botonCerrarSesion = () => {

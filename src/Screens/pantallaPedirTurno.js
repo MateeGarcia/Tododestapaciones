@@ -27,6 +27,24 @@ class pantallaPedirTurno extends React.Component {
       }
 
         botonPedirTurno = () => {
+
+          global.direccionn= this.state.direccionEscrito
+          global.diaa= this.state.date
+          global.horaa= this.state.hour
+          if (this.state.tipoDeDestapacion=="2")
+          global.tipoDeDestapacionn= "Desagote"
+
+          if (this.state.tipoDeDestapacion=="1")
+          global.tipoDeDestapacionn= "Destapacion"
+
+          if (this.state.tipoDeDestapacion=="3")
+          global.tipoDeDestapacionn= "Limpieza Hidrojet"
+
+          console.log(global.direccionn)
+          console.log(global.diaa)
+          console.log(global.horaa)
+          console.log(global.tipoDeDestapacionn)
+
           fetch ("http://192.168.0.196:8000/api/Turnos/", {
             method: "POST",
             headers: {
@@ -53,6 +71,7 @@ class pantallaPedirTurno extends React.Component {
               */
             })
           });
+          
           this.props.navigation.navigate('PaginaPrincipal');
         }   
 

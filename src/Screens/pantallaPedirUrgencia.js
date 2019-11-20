@@ -45,14 +45,20 @@ class pantallaPedirUrgencia extends React.Component {
               opciones_de_pedido: (this.state.tipoDeDestapacion),
               estado_turno: "true",
               turno_o_urgencia: "2",
-              /*
-              direccion: (this.state.direccionEscrito),
-              fecha: (this.state.fechaEscrito),
-              hora: (this.state.horaEscrito),
-              tipo: (this.state.tipoDeDestapacion),
-              */
             })
           });
+          global.direccionn= this.state.direccionEscrito
+          global.diaa= "URGENCIA"
+          global.horaa= "URGENCIA"
+          if (this.state.tipoDeDestapacion=="2")
+          global.tipoDeDestapacionn= "Desagote"
+
+          if (this.state.tipoDeDestapacion=="1")
+          global.tipoDeDestapacionn= "Destapacion"
+
+          if (this.state.tipoDeDestapacion=="3")
+          global.tipoDeDestapacionn= "Limpieza Hidrojet"
+
           this.props.navigation.navigate('PaginaPrincipal');
         }   
 

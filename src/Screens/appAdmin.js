@@ -73,16 +73,16 @@ global.nuevaLista= responseJson;
         <View style={styles.turnoGuardado}>
         <Text></Text>
                       <Text>
-                      Fecha del turno: 2019-11-22
+                      Fecha del turno: {global.diaa}
                       </Text>
                       <Text>
-                      Hora del turno: 06:30
+                      Hora del turno: {global.horaa}
                       </Text>
                       <Text>
-                      Tipo de turno: Desagote
+                      Tipo de turno: {global.tipoDeDestapacionn}
                       </Text>
                       <Text>
-                      Dirección del turno: Besares 4047
+                      Dirección del turno: {global.direccionn}
                       </Text>
                     <Text></Text>
                     <Image style={styles.imagestyle} 
