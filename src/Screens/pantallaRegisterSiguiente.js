@@ -18,7 +18,7 @@ class pantallaRegisterSiguiente extends React.Component {
           global.userid = "",
         this.state = {
           direccionEscrito: "",
-          mailadmEscrito: "",
+          mailadmEscrito: "mailadmEscrito@gmail.com",
           celularEscrito: "",
           dniEscrito: "",
         }
@@ -80,15 +80,8 @@ class pantallaRegisterSiguiente extends React.Component {
           <Image style={styles.imagestyle} 
     source={require('../img/inputLineaNaranja.png')} />
 
-<Text></Text>
-<Text></Text>
-<Text></Text>
-<Text></Text>
 
-          <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
-          onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
-          <Image style={styles.imagestyle} 
-    source={require('../img/inputLineaNaranja.png')} />
+
 
 <Text></Text>
 <Text></Text>

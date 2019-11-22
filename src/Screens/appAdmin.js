@@ -47,7 +47,7 @@ global.nuevaLista= responseJson;
 
     }
     componentWillMount() {
-      return fetch('http://192.168.0.196:8000/api/Turnos/')
+      /* return fetch('http://192.168.0.196:8000/api/Turnos/')
         .then(response => response.json())
         .then(responseJson => {
           this.setState(
@@ -62,8 +62,8 @@ global.nuevaLista= responseJson;
         })
         .catch(error => {
           console.error(error);
-        });
-    }
+        }); */
+    } 
 
 
     render(){

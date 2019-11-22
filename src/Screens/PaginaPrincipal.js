@@ -18,7 +18,7 @@ class PaginaPrincipal extends React.Component {
   };
 
   componentWillMount() {
-    fetch(`http://192.168.0.196:8000/api/users/${global.userid}/`)
+    /* fetch(`http://192.168.0.196:8000/api/users/${global.userid}/`)
           .then ((response) => response.json())
           .then ((responseJson) => {
 
@@ -28,7 +28,7 @@ class PaginaPrincipal extends React.Component {
             global.celular = responseJson.profile.celular
             global.dni = responseJson.dni
 
-          })
+          }) */
 
           /* fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
           .then ((response) => response.json())
