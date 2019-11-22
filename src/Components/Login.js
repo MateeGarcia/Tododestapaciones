@@ -48,12 +48,10 @@ class Login extends React.Component {
         })
       })
         /* .then((response) => {global.userid = response.id}) */
-        
         .then((response) => response.json().then((responseJson)=> {
           console.log(response);
           if (response.ok) {
           global.userid = responseJson.user.pk;
-           this.props.navigation.navigate("PaginaPrincipal");
          }
          else {
            Alert.alert("Datos invalidos");
@@ -61,7 +59,10 @@ class Login extends React.Component {
 
          if (global.userid == "18") {
           this.props.navigation.navigate("appAdmin");
+        } else {
+          this.props.navigation.navigate("PaginaPrincipal");
         }
+
         console.log(global.userid)
         })).catch((error) => {
           console.error(error);
