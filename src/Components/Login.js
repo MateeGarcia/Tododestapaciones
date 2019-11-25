@@ -7,11 +7,13 @@ var respuesta;
 class Login extends React.Component {
 
   static navigationOptions = {
-
-    title: "Acceso a la cuenta",
+  
+    title: "               Acceso a la cuenta",
+    headerLayoutPreset: "center",
 
     headerStyle: {
       backgroundColor: "orange",
+
     }
   };
 
@@ -52,16 +54,19 @@ class Login extends React.Component {
           console.log(response);
           if (response.ok) {
           global.userid = responseJson.user.pk;
+
+          if (global.userid == "18") {
+            this.props.navigation.navigate("appAdmin");
+          } else {
+            this.props.navigation.navigate("PaginaPrincipal");
+          }
          }
+
          else {
            Alert.alert("Datos invalidos");
          } 
 
-         if (global.userid == "18") {
-          this.props.navigation.navigate("appAdmin");
-        } else {
-          this.props.navigation.navigate("PaginaPrincipal");
-        }
+         
 
         console.log(global.userid)
         })).catch((error) => {

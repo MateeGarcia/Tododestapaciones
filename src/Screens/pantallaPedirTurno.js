@@ -6,7 +6,7 @@ class pantallaPedirTurno extends React.Component {
     
   static navigationOptions = {
 
-    title: "Pedido de turnos",
+    title: "     Pedido de turnos",
 
     headerStyle: {
       backgroundColor: "orange",

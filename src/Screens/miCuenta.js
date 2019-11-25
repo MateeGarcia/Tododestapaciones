@@ -7,7 +7,7 @@ class miCuenta extends React.Component {
 
   static navigationOptions = {
 
-    title: "Opciones",
+    title: "             Opciones",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -50,7 +50,7 @@ class miCuenta extends React.Component {
     global.userid= ""
     
 
-    fetch ("http://10.8.17.18:8000/api/users/", {
+    fetch ("http://192.168.0.196:8000/api/users/", {
       method: "POST",
       headers: {
         accept: "application/json", "content-type": "application/json",
@@ -100,15 +100,26 @@ class miCuenta extends React.Component {
             <Text> 
               Nombre: {global.nombre} {global.apellido}
             </Text>
+            <Text></Text>
             <Text>
               Mail: {global.mail}
             </Text>
+            <Text></Text>
             <Text>
               Celular: {global.celular}
             </Text>
+            <Text></Text>
             <Text>
               DNI: {global.dni}
             </Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
             <AirbnbRating
   count={5}
@@ -117,6 +128,12 @@ class miCuenta extends React.Component {
   size={60}
   onFinishRating={this.botonEstrellas2}
 />
+<Text></Text>
+<Text></Text>
+<Text></Text>
+
+<Text></Text>
+
 
 <TouchableHighlight style={styles.botonLogin3} onPress={this.botonCerrarSesion}>
 
@@ -131,7 +148,7 @@ class miCuenta extends React.Component {
 
 const styles = StyleSheet.create({
   view1: {
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
     alignContent: "center",
     flex: 1,

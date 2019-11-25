@@ -6,7 +6,7 @@ class pantallaRegister extends React.Component {
 
   static navigationOptions = {
 
-    tittle: "Registro",
+    tittle: "                Registro",
 
     headerStyle: {
       backgroundColor: "orange",

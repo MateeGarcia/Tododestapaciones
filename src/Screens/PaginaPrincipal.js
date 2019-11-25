@@ -10,7 +10,8 @@ class PaginaPrincipal extends React.Component {
 
   static navigationOptions = {
 
-    title: "Pagina Principal",
+
+    title: "       Pagina Principal",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -18,7 +19,10 @@ class PaginaPrincipal extends React.Component {
   };
 
   componentWillMount() {
-    /* fetch(`http://192.168.0.196:8000/api/users/${global.userid}/`)
+
+    
+
+     fetch(`http://192.168.0.196:8000/api/users/${global.userid}/`)
           .then ((response) => response.json())
           .then ((responseJson) => {
 
@@ -28,21 +32,17 @@ class PaginaPrincipal extends React.Component {
             global.celular = responseJson.profile.celular
             global.dni = responseJson.dni
 
-          }) */
+          }) 
 
-          /* fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
-          .then ((response) => response.json())
-          .then ((responseJson) => {
 
-            console.log(responseJson.Array.Object.dia_turno)
+            /* console.log(responseJson.Array.Object.dia_turno)
             console.log(responseJson.Object.fechaturno)
             console.log(responseJson.Object.opciones_de_pedido)
-            console.log(responseJson.Object.direccion_id)
+            console.log(responseJson.Object.direccion_id) 
             global.fecha = responseJson.dia_turno
             global.hora = responseJson.fechaturno
             global.tipoDeTurno = responseJson.opciones_de_pedido
-            global.direccion = responseJson.direccion_id
-          }) */
+            global.direccion = responseJson.direccion_id */
   }
 
   botonCerrarSesion = () => {
@@ -90,7 +90,7 @@ onPress={() => {this.props.navigation.navigate('pantallaPedirUrgencia')}}
 
     <TouchableHighlight style={styles.botonLoginCompletado} 
 hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
-onPress={() => {this.props.navigation.navigate('verPedidos')}}
+onPress={() => {this.props.navigation.navigate('verPedidos2')}}
 >
     <Image style={styles.imagestyle} 
     source={require('../img/verMiPedido.png')} />

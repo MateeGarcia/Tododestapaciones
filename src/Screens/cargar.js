@@ -1,31 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View, Navigator, TouchableHighlight, ScrollView, Image} from 'react-native';
 
-class appAdmin extends React.Component {
+class cargar extends React.Component {
 
   static navigationOptions = {
 
-    title: "               Turnos",
+    title: "Turnos",
 
     headerStyle: {
       backgroundColor: "orange",
     }
   };
-  
-  /*constructor(props){
-    super(props)
 
-    this.state ={
-
-    }
-  } */
 
 
 
 
 
  componentDidMount() {
-
+    this.props.navigation.navigate('cargar2');
 } 
 
 
@@ -37,29 +30,31 @@ class appAdmin extends React.Component {
 
     }
     componentWillMount() {
-
-
-
+      /* return fetch('http://192.168.0.196:8000/api/Turnos/')
+        .then(response => response.json())
+        .then(responseJson => {
+          this.setState(
+            {
+              dataSource: responseJson,
+            },
+            function() {
+              this.arrayholder = responseJson;
+            }
+            
+          );
+        })
+        .catch(error => {
+          console.error(error);
+        }); */
     } 
 
 
     render(){
-      fetch(`http://192.168.0.196:8000/api/Turnos/`)
-      .then((response) => response.json())
-      .then((responseJson) => {
-    global.nuevaLista= responseJson;
-    console.log(global.nuevaLista)
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    
-      this.props.navigation.navigate('appAdmin2');
+
       return( 
 
-        <View style={styles.turnoGuardado}>
+        <View>
         <Text></Text>
-
                   </View>
       );
   } 
@@ -80,7 +75,7 @@ const styles = StyleSheet.create({
   }
 })
 
-module.exports = appAdmin;
+module.exports = cargar;
 
         /* 
         array1=[];

@@ -6,7 +6,7 @@ class pantallaPedirUrgencia extends React.Component {
     
   static navigationOptions = {
 
-    title: "Pedido de urgencia",
+    title: "       Pedido de urgencia",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -36,8 +36,8 @@ class pantallaPedirUrgencia extends React.Component {
               id_usuario: `http://192.168.0.196:8000/api/users/${global.userid}/`,
               direccion_id: "http://192.168.0.196:8000/api/Direccion/1/",
               direccion_mateo: (this.state.direccionEscrito),
-              fechaturno: "12:00",
-              dia_turno: "2020-02-22",
+              fechaturno: "00:00",
+              dia_turno: "2999-12-12",
               id_camionetaturno: "http://192.168.0.196:8000/api/Camioneta/1/",
               id_trabajadorturno: "http://192.168.0.196:8000/api/Trabajador/1/",
               rating: "http://192.168.0.196:8000/api/Ratings/1/",

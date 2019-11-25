@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Navigator, TouchableHighlight, ScrollView, Image} from 'react-native';
 
-class appAdmin extends React.Component {
+class verPedidos2 extends React.Component {
 
   static navigationOptions = {
 
-    title: "               Turnos",
+    title: "     Turnos asignados",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -44,17 +44,15 @@ class appAdmin extends React.Component {
 
 
     render(){
-      fetch(`http://192.168.0.196:8000/api/Turnos/`)
-      .then((response) => response.json())
-      .then((responseJson) => {
-    global.nuevaLista= responseJson;
-    console.log(global.nuevaLista)
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    
-      this.props.navigation.navigate('appAdmin2');
+        fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
+        .then ((response) => response.json())
+        .then ((responseJson) => {
+          global.turnosUsuario= responseJson;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      this.props.navigation.navigate('verPedidos');
       return( 
 
         <View style={styles.turnoGuardado}>
@@ -80,7 +78,7 @@ const styles = StyleSheet.create({
   }
 })
 
-module.exports = appAdmin;
+module.exports = verPedidos2;
 
         /* 
         array1=[];

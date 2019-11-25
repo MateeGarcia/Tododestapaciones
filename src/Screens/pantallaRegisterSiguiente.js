@@ -6,7 +6,7 @@ class pantallaRegisterSiguiente extends React.Component {
 
   static navigationOptions = {
 
-    tittle: "Registro",
+    tittle: "                Registro",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -81,7 +81,15 @@ class pantallaRegisterSiguiente extends React.Component {
     source={require('../img/inputLineaNaranja.png')} />
 
 
+<Text></Text>
+<Text></Text>
+<Text></Text>
+<Text></Text>
 
+           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
+          onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
+          <Image style={styles.imagestyle} 
+    source={require('../img/inputLineaNaranja.png')} /> 
 
 <Text></Text>
 <Text></Text>
