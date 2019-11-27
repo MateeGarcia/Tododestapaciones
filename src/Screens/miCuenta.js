@@ -97,17 +97,21 @@ class miCuenta extends React.Component {
 
 
           <View style={styles.view1}>
+                       <Text></Text>
             <Text> 
               Nombre: {global.nombre} {global.apellido}
             </Text>
+            <Text></Text>
             <Text></Text>
             <Text>
               Mail: {global.mail}
             </Text>
             <Text></Text>
+            <Text></Text>
             <Text>
               Celular: {global.celular}
             </Text>
+            <Text></Text>
             <Text></Text>
             <Text>
               DNI: {global.dni}
@@ -115,11 +119,9 @@ class miCuenta extends React.Component {
             <Text></Text>
             <Text></Text>
             <Text></Text>
+ 
             <Text></Text>
-            <Text></Text>
-<Text></Text>
-<Text></Text>
-<Text></Text>
+
 
             <AirbnbRating
   count={5}

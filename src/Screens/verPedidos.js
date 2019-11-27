@@ -25,10 +25,7 @@ class verPedidos extends React.Component {
     }
   }
 
-fafa() {
-  Alert.alert("Para cancelar turnos llamar a: +54 9 154970 8009")
 
-}
 
   componentDidMount() {
     this.setState({ turnoCancelado: (this.state.turnoCancelado) + "1"})
@@ -39,13 +36,6 @@ fafa() {
         return(
           
 <View style={styles.viewPrincipal}>
-  <Text></Text>
-<TouchableOpacity  onPress={this.fafa}>
-<Text style={styles.textito}>
-          Cancelar un turno
-  </Text>
-</TouchableOpacity>
-<Text></Text>
           <ScrollView>
           <View style={styles.viewPrincipal}>
 
@@ -76,10 +66,6 @@ fafa() {
                       {item.opciones_de_pedido == '1'? <Text>Tipo de servicio: Destapación</Text>: null }
                       {item.opciones_de_pedido == '2'? <Text>Tipo de servicio: Desagote</Text>: null }
                       {item.opciones_de_pedido == '3'? <Text>Tipo de servicio: Limpieza Hidrojet</Text>: null }
-
-
-                      {item.estado_turno == true? <Text>¿Turno habilitado?: Si</Text>: null }
-                      {item.estado_turno == false? <Text>¿Turno habilitado?: No</Text>: null }
 
                       <Text></Text>
 
@@ -120,16 +106,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  textito: {
-    backgroundColor: "orange",
-    borderRadius: 500,
-    fontSize: 20,
-    borderEndWidth: 50,
-    textAlign: "center",
-
-
-
-  },
+  
 })
 
 module.exports = verPedidos;

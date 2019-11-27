@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Navigator, TouchableHighlight, ScrollView, Image} from 'react-native';
 
-class appAdmin extends React.Component {
+class appAdmin3 extends React.Component {
 
   static navigationOptions = {
 
@@ -76,13 +76,6 @@ onPress={() => {this.props.navigation.navigate('pantallaPedirUrgencia')}}
     source={require('../img/solicitarUrgencia.png')} />
     </TouchableHighlight>
 
-    <TouchableHighlight style={styles.botonLoginCompletado} 
-hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
-onPress={() => {this.props.navigation.navigate('appAdmin2')}}
->
-    <Image style={styles.imagestyle} 
-    source={require('../img/verMiPedido.png')} />
-    </TouchableHighlight>
 
 
 
@@ -173,11 +166,4 @@ const styles = StyleSheet.create({
     },
 })
 
-module.exports = appAdmin;
-
-        /* 
-        array1=[];
-                    for (i = 0; i <= responseJson.length-1;i++){
-                      array1.push(JSON.stringify(responseJson[i]));
-                    } 
-                    */
+module.exports = appAdmin3;

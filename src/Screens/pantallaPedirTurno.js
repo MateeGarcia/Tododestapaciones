@@ -72,7 +72,11 @@ class pantallaPedirTurno extends React.Component {
             })
           });
           
+          if(global.userid == 18){
+          this.props.navigation.navigate('appAdmin');
+          } else {
           this.props.navigation.navigate('PaginaPrincipal');
+          }
         }   
 
     render(){

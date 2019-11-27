@@ -14,6 +14,7 @@ import OrnitorrincoScreen from "./src/Screens/OrnitorrincoScreen"
 import estrellas from "./src/Screens/estrellas"
 import appAdmin from "./src/Screens/appAdmin"
 import appAdmin2 from "./src/Screens/appAdmin2"
+import appAdmin3 from "./src/Screens/appAdmin3"
 import cargar from "./src/Screens/cargar"
 import cargar2 from "./src/Screens/cargar2"
 
@@ -31,6 +32,7 @@ const RootStack = createStackNavigator(
     estrellas: estrellas,
     appAdmin: appAdmin,
     appAdmin2: appAdmin2,
+    appAdmin3: appAdmin3,
     pantallaPedirUrgencia: pantallaPedirUrgencia,
     cargar: cargar,
     cargar2: cargar2,

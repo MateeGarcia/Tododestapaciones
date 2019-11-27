@@ -69,6 +69,7 @@ class pantallaRegister extends React.Component {
 <Text></Text>
 <Text></Text>
 <Text></Text>
+<Text></Text>
 
 
 
@@ -83,7 +84,7 @@ class pantallaRegister extends React.Component {
 
           </TouchableOpacity>
 
-
+          <Text></Text>
           
 
         </View>

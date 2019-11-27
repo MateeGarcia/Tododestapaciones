@@ -59,7 +59,11 @@ class pantallaPedirUrgencia extends React.Component {
           if (this.state.tipoDeDestapacion=="3")
           global.tipoDeDestapacionn= "Limpieza Hidrojet"
 
+                    if(global.userid == 18){
+          this.props.navigation.navigate('appAdmin');
+          } else {
           this.props.navigation.navigate('PaginaPrincipal');
+          }
         }   
 
     render(){

@@ -86,15 +86,7 @@ class pantallaRegisterSiguiente extends React.Component {
 <Text></Text>
 <Text></Text>
 
-           <TextInput style={styles.mailadmInput} placeholder="Mail de la administración" 
-          onChange={(event) => this.setState({mailadmEscrito: event.nativeEvent.text})}/>
-          <Image style={styles.imagestyle} 
-    source={require('../img/inputLineaNaranja.png')} /> 
 
-<Text></Text>
-<Text></Text>
-<Text></Text>
-<Text></Text>
 
           <TextInput style={styles.celularInput} placeholder="Telefono Celular" 
           onChange={(event) => this.setState({celularEscrito: event.nativeEvent.text})}/>
@@ -115,6 +107,8 @@ class pantallaRegisterSiguiente extends React.Component {
 <Text></Text>
 <Text></Text>
 <Text></Text>
+<Text></Text>
+<Text></Text>
 
           <TouchableOpacity style={styles.siguiente} 
           onPress={this.botonRegistrarse}> 
@@ -123,6 +117,7 @@ class pantallaRegisterSiguiente extends React.Component {
         style={styles.button}
         source={require('../img/crearCuenta.png')}
       />
+      <Text></Text>
 
           </TouchableOpacity>
 

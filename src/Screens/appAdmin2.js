@@ -14,14 +14,6 @@ class appAdmin2 extends React.Component {
   
   constructor(props){
     super(props)
-    fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
-    .then ((response) => response.json())
-    .then ((responseJson) => {
-      global.turnosUsuario= responseJson;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
     this.state ={
       turnoCancelado: "1"
     }

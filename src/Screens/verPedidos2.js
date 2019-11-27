@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Navigator, TouchableHighlight, ScrollView, Image} from 'react-native';
+import { StyleSheet, Text, View, Navigator, TouchableHighlight, ScrollView, Image, TouchableOpacity, Alert} from 'react-native';
 
 class verPedidos2 extends React.Component {
 
@@ -11,18 +11,11 @@ class verPedidos2 extends React.Component {
       backgroundColor: "orange",
     }
   };
+
+  fafa() {
+    Alert.alert("Para cancelar turnos llamar a: +54 9 154970 8009")
   
-  /*constructor(props){
-    super(props)
-
-    this.state ={
-
-    }
-  } */
-
-
-
-
+  }
 
  componentDidMount() {
 
@@ -52,12 +45,22 @@ class verPedidos2 extends React.Component {
         .catch((error) => {
           console.error(error);
         });
-      this.props.navigation.navigate('verPedidos');
+
       return( 
 
         <View style={styles.turnoGuardado}>
-        <Text></Text>
 
+    <TouchableOpacity onPress={() => { this.props.navigation.navigate("verPedidos");}}>
+<Text style={styles.textito}>
+          Ver mis pedidos
+  </Text>
+</TouchableOpacity>
+
+    <TouchableOpacity onPress={this.fafa}>
+<Text style={styles.textito}>
+          Cancelar turnos
+  </Text>
+</TouchableOpacity>
                   </View>
       );
   } 
@@ -74,15 +77,19 @@ const styles = StyleSheet.create({
   },
 
   turnoGuardado: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    justifyContent: "space-around"
+  },
 
-  }
+  textito: {
+    backgroundColor: "orange",
+    borderRadius: 500,
+    fontSize: 20,
+    borderEndWidth: 50,
+    textAlign: "center",
+  },
 })
 
 module.exports = verPedidos2;
-
-        /* 
-        array1=[];
-                    for (i = 0; i <= responseJson.length-1;i++){
-                      array1.push(JSON.stringify(responseJson[i]));
-                    } 
-                    */
