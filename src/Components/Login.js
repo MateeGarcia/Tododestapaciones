@@ -56,8 +56,12 @@ class Login extends React.Component {
           global.userid = responseJson.user.pk;
 
           if (global.userid == "18") {
+            this.name.clear();
+            this.password.clear();
             this.props.navigation.navigate("appAdmin");
           } else {
+            this.name.clear();
+            this.password.clear();
             this.props.navigation.navigate("PaginaPrincipal");
           }
          }
@@ -94,8 +98,7 @@ class Login extends React.Component {
 <Text></Text>
 
 
-
-<TextInput style={styles.usuarioInput} secureTextEntry={false} placeholder="DNI" 
+<TextInput ref={input => { this.name = input }} style={styles.usuarioInput} secureTextEntry={false} placeholder="DNI" 
           onChange={(event) => this.setState({dniEscrita: event.nativeEvent.text})}
           />
 <Image style={styles.imagestyle} 
@@ -104,7 +107,7 @@ class Login extends React.Component {
 
            
 
-          <TextInput style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
+          <TextInput ref={input => { this.password = input }} style={styles.contraseñaInput} secureTextEntry={true} placeholder="Contraseña" 
           onChange={(event) => this.setState({contraseñaEscrita: event.nativeEvent.text})}
           />
 <Image style={styles.imagestyle} 

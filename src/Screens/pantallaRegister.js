@@ -24,7 +24,11 @@ class pantallaRegister extends React.Component {
 }
 
   guardarGlobal = () => {
-    this.props.navigation.navigate('pantallaRegisterSiguiente');
+    if(nombreEscrito.length >= 3 && apellidoEscrito.length >= 3 && mailEscrito.length >= 2 && contraseñaEscrito.length >= 2) {
+      this.props.navigation.navigate('pantallaRegisterSiguiente');
+    } else {
+      Alert.alert("Datos incompletos")
+    }
   }
 
       render() {

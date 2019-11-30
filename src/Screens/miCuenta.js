@@ -7,7 +7,7 @@ class miCuenta extends React.Component {
 
   static navigationOptions = {
 
-    title: "             Opciones",
+    title: "            Opciones",
 
     headerStyle: {
       backgroundColor: "orange",

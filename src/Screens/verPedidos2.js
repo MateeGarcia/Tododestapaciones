@@ -50,14 +50,14 @@ class verPedidos2 extends React.Component {
 
         <View style={styles.turnoGuardado}>
 
-    <TouchableOpacity onPress={() => { this.props.navigation.navigate("verPedidos");}}>
-<Text style={styles.textito}>
+    <TouchableOpacity style={styles.textito} onPress={() => { this.props.navigation.navigate("verPedidos");}}>
+<Text>
           Ver mis pedidos
   </Text>
 </TouchableOpacity>
 
-    <TouchableOpacity onPress={this.fafa}>
-<Text style={styles.textito}>
+    <TouchableOpacity style={styles.textito} onPress={this.fafa}>
+<Text>
           Cancelar turnos
   </Text>
 </TouchableOpacity>
@@ -84,11 +84,10 @@ const styles = StyleSheet.create({
   },
 
   textito: {
-    backgroundColor: "orange",
-    borderRadius: 500,
-    fontSize: 20,
-    borderEndWidth: 50,
-    textAlign: "center",
+    backgroundColor: 'orange',
+    height: 40,
+    width: '50%',
+    alignItems: 'center',
   },
 })
 

@@ -5,8 +5,8 @@ class appAdmin extends React.Component {
 
   static navigationOptions = {
 
-    title: "               Turnos",
-
+    title: "                        Turnos",
+    headerLeft: null,
     headerStyle: {
       backgroundColor: "orange",
     }
@@ -25,6 +25,24 @@ asd(){
   this.props.navigation.navigate('appAdmin2');
 }
 
+botonCerrarSesion = () => {
+  global.userid= ""
+  
+
+  fetch ("http://192.168.0.196:8000/api/users/", {
+    method: "POST",
+    headers: {
+      accept: "application/json", "content-type": "application/json",
+    },
+    body: JSON.stringify({
+
+      userid: (global.userid),
+      
+    })
+  })
+
+  this.props.navigation.navigate('Login');
+}
 
  componentDidMount() {
 
@@ -76,12 +94,20 @@ onPress={() => {this.props.navigation.navigate('pantallaPedirUrgencia')}}
     source={require('../img/solicitarUrgencia.png')} />
     </TouchableHighlight>
 
+
+
     <TouchableHighlight style={styles.botonLoginCompletado} 
 hitSlop={{top: 10, left: 20, bottom: 10, right: 20}}
 onPress={() => {this.props.navigation.navigate('appAdmin2')}}
 >
     <Image style={styles.imagestyle} 
     source={require('../img/verMiPedido.png')} />
+    </TouchableHighlight>
+
+    <TouchableHighlight style={styles.botonLoginCompletado} onPress={this.botonCerrarSesion}>
+
+<Image style={styles.imagestyle} 
+    source={require('../img/LOGOUT.png')} />
     </TouchableHighlight>
 
 

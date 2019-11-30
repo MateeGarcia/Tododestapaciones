@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker, Image, DatePickerAndroid, DatePickerIOS} from 'react-native';
+import {Alert, StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker, Image, DatePickerAndroid, DatePickerIOS} from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
 class pantallaPedirTurno extends React.Component {
@@ -27,6 +27,7 @@ class pantallaPedirTurno extends React.Component {
       }
 
         botonPedirTurno = () => {
+          if (this.state.direccionEscrito.length >= 3 && this.state.hour != "" && this.state.date != "") {
 
           global.direccionn= this.state.direccionEscrito
           global.diaa= this.state.date
@@ -77,6 +78,9 @@ class pantallaPedirTurno extends React.Component {
           } else {
           this.props.navigation.navigate('PaginaPrincipal');
           }
+        } else {
+          Alert.alert("Datos incompletos")
+        }
         }   
 
     render(){

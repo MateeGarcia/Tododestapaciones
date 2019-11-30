@@ -11,8 +11,8 @@ class PaginaPrincipal extends React.Component {
   static navigationOptions = {
 
 
-    title: "       Pagina Principal",
-
+    title: "                  Pagina Principal",
+    headerLeft: null,
     headerStyle: {
       backgroundColor: "orange",
     },

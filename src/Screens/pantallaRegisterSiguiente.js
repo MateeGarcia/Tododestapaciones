@@ -26,6 +26,8 @@ class pantallaRegisterSiguiente extends React.Component {
 
 
       botonRegistrarse = () => {
+
+        if (this.state.dniEscrito.length >= 3 && this.state.celularEscrito.length >= 3 && this.state.direccionEscrito.length >= 3) {
         fetch ("http://192.168.0.196:8000/api/users/", {
           method: "POST",
           headers: {
@@ -62,13 +64,12 @@ class pantallaRegisterSiguiente extends React.Component {
           }
         })
 
-        
-        
-        
-
         .catch((error) => {
           console.error(error);
         });
+      } else {
+        Alert.alert("Datos incompletos")
+      }
       }
         
       render() {

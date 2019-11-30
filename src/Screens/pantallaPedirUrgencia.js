@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker, Image, DatePickerAndroid, DatePickerIOS} from 'react-native';
+import {Alert, StyleSheet, Text, TextInput, View, Button, TouchableOpacity, TouchableHighlight, Picker, Image, DatePickerAndroid, DatePickerIOS} from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
 class pantallaPedirUrgencia extends React.Component {
     
   static navigationOptions = {
 
-    title: "       Pedido de urgencia",
+    title: "     Pedido de urgencia",
 
     headerStyle: {
       backgroundColor: "orange",
@@ -27,6 +27,7 @@ class pantallaPedirUrgencia extends React.Component {
       }
 
         botonPedirTurno = () => {
+          if (this.state.direccionEscrito.length >= 3) {
           fetch ("http://192.168.0.196:8000/api/Turnos/", {
             method: "POST",
             headers: {
@@ -64,6 +65,9 @@ class pantallaPedirUrgencia extends React.Component {
           } else {
           this.props.navigation.navigate('PaginaPrincipal');
           }
+        } else {
+          Alert.alert("Datos incompletos")
+        }
         }   
 
     render(){
