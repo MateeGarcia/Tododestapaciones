@@ -28,7 +28,7 @@ class pantallaRegisterSiguiente extends React.Component {
       botonRegistrarse = () => {
 
         if (this.state.dniEscrito.length >= 3 && this.state.celularEscrito.length >= 3 && this.state.direccionEscrito.length >= 3) {
-        fetch ("http://192.168.0.196:8000/api/users/", {
+        fetch ("http://10.8.17.18:8000/api/users/", {
           method: "POST",
           headers: {
             accept: "application/json", "content-type": "application/json",

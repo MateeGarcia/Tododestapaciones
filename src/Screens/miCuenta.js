@@ -50,7 +50,7 @@ class miCuenta extends React.Component {
     global.userid= ""
     
 
-    fetch ("http://192.168.0.196:8000/api/users/", {
+    fetch ("http://10.8.17.18:8000/api/auth/logout/", {
       method: "POST",
       headers: {
         accept: "application/json", "content-type": "application/json",
@@ -68,7 +68,7 @@ class miCuenta extends React.Component {
 
 
   botonEstrellas = () => {
-    fetch('http://192.168.0.196:8000/api/Ratings/', {
+    fetch('http://10.8.17.18:8000/api/Ratings/', {
       method: 'POST',
       headers: {
         accept: 'application/json',
@@ -76,7 +76,7 @@ class miCuenta extends React.Component {
       },
       body: JSON.stringify({
         Rating_general: `${estrellasEscrita}`,
-        trabajador1: "http://192.168.0.196:8000/api/Trabajador/1/",
+        trabajador1: "http://10.8.17.18:8000/api/Trabajador/1/",
         Cant_Rating: "3",
         Rating_numers: "3",
       })

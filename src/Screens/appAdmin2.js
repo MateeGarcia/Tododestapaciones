@@ -48,7 +48,7 @@ Alert.alert(
     {text: 'Cancelar', onPress: () => console.log('Cancelar')},
     {text: 'Continuar', onPress: () => {
 
-       fetch(`http://192.168.0.196:8000/api/Turnos/${item.id}/`, {
+       fetch(`http://10.8.17.18:8000/api/Turnos/${item.id}/`, {
         method: "DELETE"
         }) 
 

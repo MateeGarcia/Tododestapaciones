@@ -36,7 +36,7 @@ class Login extends React.Component {
     if (this.state.dniEscrita.length < 1 || this.state.contraseñaEscrita.length <= 1) {
       Alert.alert("Credenciales Invalidas"); 
     } else {
-      fetch('http://192.168.0.196:8000/api/auth/login/', {
+      fetch('http://10.8.17.18:8000/api/auth/login/', {
         method: 'POST',
         headers: {
           accept: 'application/json',

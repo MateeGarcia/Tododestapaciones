@@ -29,7 +29,7 @@ botonCerrarSesion = () => {
   global.userid= ""
   
 
-  fetch ("http://192.168.0.196:8000/api/users/", {
+  fetch ("http://10.8.17.18:8000/api/users/", {
     method: "POST",
     headers: {
       accept: "application/json", "content-type": "application/json",
@@ -64,7 +64,7 @@ botonCerrarSesion = () => {
 
 
     render(){
-      fetch(`http://192.168.0.196:8000/api/Turnos/`)
+      fetch(`http://10.8.17.18:8000/api/Turnos/`)
       .then((response) => response.json())
       .then((responseJson) => {
     global.nuevaLista= responseJson;

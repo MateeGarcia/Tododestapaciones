@@ -22,7 +22,7 @@ class PaginaPrincipal extends React.Component {
 
     
 
-     fetch(`http://192.168.0.196:8000/api/users/${global.userid}/`)
+     fetch(`http://10.8.17.18:8000/api/users/${global.userid}/`)
           .then ((response) => response.json())
           .then ((responseJson) => {
 

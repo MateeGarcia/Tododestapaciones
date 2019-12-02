@@ -37,7 +37,7 @@ class verPedidos2 extends React.Component {
 
 
     render(){
-        fetch(`http://192.168.0.196:8000/api/Turnos/?id_usuario=${global.userid}`)
+        fetch(`http://10.8.17.18:8000/api/Turnos/?id_usuario=${global.userid}`)
         .then ((response) => response.json())
         .then ((responseJson) => {
           global.turnosUsuario= responseJson;
@@ -50,16 +50,17 @@ class verPedidos2 extends React.Component {
 
         <View style={styles.turnoGuardado}>
 
-    <TouchableOpacity style={styles.textito} onPress={() => { this.props.navigation.navigate("verPedidos");}}>
-<Text>
-          Ver mis pedidos
-  </Text>
+    <TouchableOpacity onPress={() => { this.props.navigation.navigate("verPedidos");}}>
+    <Image style={styles.imagestyle} 
+    hitSlop={{top: 2, left: 20, bottom: 2, right: 20}}
+    source={require('../img/vermipedidos.png')} />
 </TouchableOpacity>
 
-    <TouchableOpacity style={styles.textito} onPress={this.fafa}>
-<Text>
-          Cancelar turnos
-  </Text>
+
+    <TouchableOpacity onPress={this.fafa}>
+    <Image style={styles.imagestyle} 
+    hitSlop={{top: 2, left: 20, bottom: 2, right: 20}}
+    source={require('../img/cancelarturnos.png')} />
 </TouchableOpacity>
                   </View>
       );
